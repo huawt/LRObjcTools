@@ -38,10 +38,10 @@
 
 /* Begin PBXFileReference section */
 		1DEC7F255432F32E7A474FB6 /* Pods_LRObjcTools_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LRObjcTools_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		36F7643D596EF2BC5786AD39 /* LRObjcTools.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = LRObjcTools.podspec; path = ../LRObjcTools.podspec; sourceTree = "<group>"; };
-		44D4860F6B906DB0622B05AD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		36F7643D596EF2BC5786AD39 /* LRObjcTools.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LRObjcTools.podspec; path = ../LRObjcTools.podspec; sourceTree = "<group>"; };
+		44D4860F6B906DB0622B05AD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		52DAD49EE9592F60E64F4C2D /* Pods_LRObjcTools_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LRObjcTools_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5555A0831328F39B70B60D98 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		5555A0831328F39B70B60D98 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* LRObjcTools_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LRObjcTools_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,7 +103,6 @@
 				6EF17D1C6BC3482B072C2F89 /* Pods-LRObjcTools_Tests.debug.xcconfig */,
 				97140EDAB0EF8BFAD9BC6EA2 /* Pods-LRObjcTools_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
