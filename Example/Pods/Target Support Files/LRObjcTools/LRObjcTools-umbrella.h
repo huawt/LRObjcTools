@@ -19,6 +19,7 @@
 #import "LRBaseTableViewCell.h"
 #import "LRBaseViewController.h"
 #import "LRDeviceService.h"
+#import "LRObjcTools.h"
 #import "LRPlaceholderTextView.h"
 #import "LRStepSlider.h"
 #import "NSObject+Extension.h"
