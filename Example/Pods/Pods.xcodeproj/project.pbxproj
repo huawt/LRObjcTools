@@ -7,26 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06A2900129A96DEB0466CB17480C31CE /* LRBaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7945C8F087B97F232AB837C9E8FE6D36 /* LRBaseViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		070A622AF6BB24D34AC39DF10334669C /* NSObject+Swizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = FE6BDA2A7B5DF4BBCD973477FAC0AF16 /* NSObject+Swizzle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A5C6CE40D6F40A0BF8786054770B09D /* LRDeviceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299E90B299019DA8CCA54208D8559A1 /* LRDeviceService.m */; };
 		0D5538C2F18F078FF0D20C17D6CB4209 /* Pods-LRObjcTools_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45450CB44BD33F457EBF1D1C57982AA5 /* Pods-LRObjcTools_Tests-dummy.m */; };
 		1C2016833CC2DA4A99F96270874D87DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		20B1955D04B256831D3D26DFD8D282CC /* LRObjcTools-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BE29D19F4CD5BC4A4B4799B62EB9B8 /* LRObjcTools-dummy.m */; };
 		244EA179F94D03E7C12F7D30FD145AB5 /* Pods-LRObjcTools_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A61DEE23311B0E317F00FB2B2A1163C9 /* Pods-LRObjcTools_Example-dummy.m */; };
+		2C3B26B9EE87C0B332424D8CDA9998CD /* LRBaseScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 92227AC66FF4935B88A69B617E215138 /* LRBaseScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3358A8A4F22B624E290B2E4A85F05D99 /* LRBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4700DB688D8C3AB3EABDB318D4E739F /* LRBaseViewController.m */; };
+		38C1A81AACBCE1092C6321213129494C /* LRBaseNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E45C4A4328AF89414694CC34F0B33EE /* LRBaseNavigationBar.m */; };
+		38F4FB78C5E653FCB5CCF6CC5CF3D215 /* LRBaseTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 680AB0C1647C54449EB7FAA116005B98 /* LRBaseTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40D3FA9CEDA9F1584BDB7AF7F71A9ECB /* LRBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B30000E6CF4344DA088407EC48D528 /* LRBaseTableViewCell.m */; };
+		476C8AB6276884CDAF3346A099495AF7 /* LRBaseScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D4563F06084A1D38729DEE701FA528 /* LRBaseScrollView.m */; };
+		59C14700E4DE598ECF7367DE7F1A9272 /* LRBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DFAB04ECACA33FD634DE63D9D28ECF /* LRBaseNavigationController.m */; };
+		6DEBFB7CCBE4534C200180E3A7E7A999 /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EE498CD9F3CCC22CDA36EFAB08F485 /* NSObject+Extension.m */; };
 		6DFFB74FCA2AC7DC78BD9F255F42C365 /* Pods-LRObjcTools_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F8E6684E8CE51E9A13F8FF7C856FDD1 /* Pods-LRObjcTools_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7620535D742300D0168A16CA0CA60D11 /* LRObjcTools-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 596D9E750EAEF68C1A2D392CE0AB7043 /* LRObjcTools-dummy.m */; };
+		7955D8F79D7CDACDF1EB462DB236B7AE /* NSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 68035A664D46C083C2B060BAE936E123 /* NSObject+Swizzle.m */; };
+		7CDD34ACD88A3C8EAC66AA3F8CB1EA14 /* LRBaseCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 979680BD8D18924BC453B96CD22E4E48 /* LRBaseCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7FB5D06A2D35A7F7A1F514934D2EFEEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		89575DC1C06D3A3158365EE2D1F2618A /* LRStepSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DD755B3E04B2C2549629FAB7BF1219 /* LRStepSlider.m */; };
+		8E2B18F520E41CE5E5B8EA188038CC8A /* NSObject+Extension.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F113B4E4EBA1914FE389D13CAD8AB24 /* NSObject+Extension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91CBD01B504403B8FD8CD15EEA111904 /* LRDeviceService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B9DEAE8503CC0DE05D316113B331C87 /* LRDeviceService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		991108277C7778391C82C46F51F5687F /* LRBaseNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = D68DCBD6014D54074CC35FA5069E3EB5 /* LRBaseNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9982CCCFC25C3C57552CFC1AD1EF75FE /* Pods-LRObjcTools_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A011DEC729619C5FFA88FAF4B4C8A1BC /* Pods-LRObjcTools_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0E5404D4C5A352DFE38B505954CF281 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		E9392E7B97F64FA8AB9453520112C5D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		EC6B7F6CF6ECA8FC13FD6FE70E174DE4 /* LRObjcTools-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 074C025C519B2DB1A9B84E55891DABCA /* LRObjcTools-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A458EED9033CA03963994DA0995548A9 /* LRPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF45AFF775944658EB3399696662CF92 /* LRPlaceholderTextView.m */; };
+		AFEC58EC2F4E4EB3A6C72EA8F1D0ECB6 /* LRBaseCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = C1B1AC7B9DDB4AD8E8C6B230EC7CC1A9 /* LRBaseCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02F5021CF3B1C8C500E5601E242ED4A /* LRBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDEE4145CD70300FADD8A02A208DE78 /* LRBaseCollectionViewCell.m */; };
+		B4B9B1892BC3FD1A633776C351BD0792 /* LRObjcTools-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A3A447CA4C2CDFA5689E6650CA96AC1 /* LRObjcTools-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7B3FEB2F5C53D5A044F05CAFBFAA19D /* LRBaseTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DFD2F3E8CC7FC02A64653BE0FC9DB2C /* LRBaseTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB5226B9DDB7EDF7C083A66E8A2ECE6F /* LRBaseNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A6B879BE65EACCD6535A09B90BF0D9C /* LRBaseNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFC65DAA468912ADF50064BAEBA1BE43 /* LRPlaceholderTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = B2B2A40086E733E207295F238AEC01DC /* LRPlaceholderTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E5B2CE3D46695C4C5A4F7015E06491C8 /* LRBaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E10523F5F77B0517074154C126FE5EF0 /* LRBaseCollectionView.m */; };
+		F008C64DAD84DAC6EEDD77563D34086C /* LRBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C1ACCBD54DB99E37341B6F128B1FA5 /* LRBaseTableView.m */; };
+		FEF271112F2867C1B89A0AE4A72998DA /* LRStepSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = 16C136845CD5046BC687C14107D65D69 /* LRStepSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2774120E795FA022594F9D7856B090F8 /* PBXContainerItemProxy */ = {
+		8E9103F7B4357F5956916190A03A199E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F3C029B0E73A90319F8D723BE90E899D;
 			remoteInfo = LRObjcTools;
 		};
-		A7FAF8B866FEDDC28251EBE5582B36D2 /* PBXContainerItemProxy */ = {
+		C2632FDB7BE04A4D5947FD3274F098F4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -36,38 +62,64 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		074C025C519B2DB1A9B84E55891DABCA /* LRObjcTools-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LRObjcTools-umbrella.h"; sourceTree = "<group>"; };
+		02D4563F06084A1D38729DEE701FA528 /* LRBaseScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LRBaseScrollView.m; path = LRObjcTools/Classes/LRBaseScrollView.m; sourceTree = "<group>"; };
 		0BAFAF68EF1F6B90DA512983FE88F032 /* Pods-LRObjcTools_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LRObjcTools_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		1CAB7F39DD79F26E4F418AC4B45CCE52 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		2104224BB7C6DDC4B3A88760B2A0CA33 /* LRObjcTools.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = LRObjcTools.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		16C136845CD5046BC687C14107D65D69 /* LRStepSlider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LRStepSlider.h; path = LRObjcTools/Classes/LRStepSlider.h; sourceTree = "<group>"; };
+		1B9DEAE8503CC0DE05D316113B331C87 /* LRDeviceService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LRDeviceService.h; path = LRObjcTools/Classes/LRDeviceService.h; sourceTree = "<group>"; };
+		1F113B4E4EBA1914FE389D13CAD8AB24 /* NSObject+Extension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+Extension.h"; path = "LRObjcTools/Classes/NSObject+Extension.h"; sourceTree = "<group>"; };
 		27813D3A07F6E9B089A537FD186E2AD8 /* Pods-LRObjcTools_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LRObjcTools_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2C1E154BBB0CAFD171C2D2228C785655 /* LRObjcTools-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LRObjcTools-prefix.pch"; sourceTree = "<group>"; };
 		2F8E6684E8CE51E9A13F8FF7C856FDD1 /* Pods-LRObjcTools_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LRObjcTools_Example-umbrella.h"; sourceTree = "<group>"; };
-		301ECE11400DA9F75A3B3B97947DC7E0 /* LRObjcTools-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LRObjcTools-Info.plist"; sourceTree = "<group>"; };
-		36DA4A35FE33DB7799B0D653BD8A4935 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3F9C59B04ADAE94E23F89FC9B66145AB /* LRObjcTools-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LRObjcTools-prefix.pch"; sourceTree = "<group>"; };
 		45450CB44BD33F457EBF1D1C57982AA5 /* Pods-LRObjcTools_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LRObjcTools_Tests-dummy.m"; sourceTree = "<group>"; };
+		49C1ACCBD54DB99E37341B6F128B1FA5 /* LRBaseTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LRBaseTableView.m; path = LRObjcTools/Classes/LRBaseTableView.m; sourceTree = "<group>"; };
 		5371F335FD3E63D9276E00966CF2743B /* Pods-LRObjcTools_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LRObjcTools_Tests"; path = Pods_LRObjcTools_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B1459FF3EFED4CE09B000067E465D9 /* Pods-LRObjcTools_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LRObjcTools_Example-Info.plist"; sourceTree = "<group>"; };
+		596D9E750EAEF68C1A2D392CE0AB7043 /* LRObjcTools-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LRObjcTools-dummy.m"; sourceTree = "<group>"; };
+		5EE7310AEA6BB480A5C3BC62804DF593 /* LRObjcTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LRObjcTools.release.xcconfig; sourceTree = "<group>"; };
 		60EDF7EEDA049FE042A0CFAE1C2B0C10 /* Pods-LRObjcTools_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LRObjcTools_Tests-Info.plist"; sourceTree = "<group>"; };
+		63B3628588277664152163839011DA90 /* LRObjcTools.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LRObjcTools.modulemap; sourceTree = "<group>"; };
+		68035A664D46C083C2B060BAE936E123 /* NSObject+Swizzle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Swizzle.m"; path = "LRObjcTools/Classes/NSObject+Swizzle.m"; sourceTree = "<group>"; };
+		680AB0C1647C54449EB7FAA116005B98 /* LRBaseTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LRBaseTableViewCell.h; path = LRObjcTools/Classes/LRBaseTableViewCell.h; sourceTree = "<group>"; };
+		6A6B879BE65EACCD6535A09B90BF0D9C /* LRBaseNavigationBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LRBaseNavigationBar.h; path = LRObjcTools/Classes/LRBaseNavigationBar.h; sourceTree = "<group>"; };
 		6B018A0410DDF1746A1D7B9D580DCAAE /* Pods-LRObjcTools_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LRObjcTools_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6DFD2F3E8CC7FC02A64653BE0FC9DB2C /* LRBaseTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LRBaseTableView.h; path = LRObjcTools/Classes/LRBaseTableView.h; sourceTree = "<group>"; };
+		6E45C4A4328AF89414694CC34F0B33EE /* LRBaseNavigationBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LRBaseNavigationBar.m; path = LRObjcTools/Classes/LRBaseNavigationBar.m; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		77DD755B3E04B2C2549629FAB7BF1219 /* LRStepSlider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LRStepSlider.m; path = LRObjcTools/Classes/LRStepSlider.m; sourceTree = "<group>"; };
+		7849AB74AA5B9B2FB57F6209AB0EC4B6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		7945C8F087B97F232AB837C9E8FE6D36 /* LRBaseViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LRBaseViewController.h; path = LRObjcTools/Classes/LRBaseViewController.h; sourceTree = "<group>"; };
 		794F7F8C4708C7FE0FB2F9FB5D6C59FE /* Pods-LRObjcTools_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LRObjcTools_Example.modulemap"; sourceTree = "<group>"; };
-		86BE29D19F4CD5BC4A4B4799B62EB9B8 /* LRObjcTools-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LRObjcTools-dummy.m"; sourceTree = "<group>"; };
+		7A3A447CA4C2CDFA5689E6650CA96AC1 /* LRObjcTools-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LRObjcTools-umbrella.h"; sourceTree = "<group>"; };
+		84DFAB04ECACA33FD634DE63D9D28ECF /* LRBaseNavigationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LRBaseNavigationController.m; path = LRObjcTools/Classes/LRBaseNavigationController.m; sourceTree = "<group>"; };
 		8B26D55F81A5C9904D9D730BB2ED2129 /* Pods-LRObjcTools_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LRObjcTools_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		94240BCF18D04778F9435C43DF7D7FE5 /* LRObjcTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LRObjcTools.release.xcconfig; sourceTree = "<group>"; };
+		92227AC66FF4935B88A69B617E215138 /* LRBaseScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LRBaseScrollView.h; path = LRObjcTools/Classes/LRBaseScrollView.h; sourceTree = "<group>"; };
+		9299E90B299019DA8CCA54208D8559A1 /* LRDeviceService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LRDeviceService.m; path = LRObjcTools/Classes/LRDeviceService.m; sourceTree = "<group>"; };
 		96F6A971D711FABA431CC3F092C43A93 /* Pods-LRObjcTools_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LRObjcTools_Tests.modulemap"; sourceTree = "<group>"; };
+		979680BD8D18924BC453B96CD22E4E48 /* LRBaseCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LRBaseCollectionViewCell.h; path = LRObjcTools/Classes/LRBaseCollectionViewCell.h; sourceTree = "<group>"; };
 		984EFB9EB241FAC31F726CA591AF8E0F /* Pods-LRObjcTools_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LRObjcTools_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		99EBAEE85EB57B967B27DC25B064754E /* Pods-LRObjcTools_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LRObjcTools_Example"; path = Pods_LRObjcTools_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B4BE5F3F3957F1DB8D0ECBC573B8B02 /* LRObjcTools.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LRObjcTools.modulemap; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F26C3F011EDE479FA09CD1F89977D72 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		A011DEC729619C5FFA88FAF4B4C8A1BC /* Pods-LRObjcTools_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LRObjcTools_Tests-umbrella.h"; sourceTree = "<group>"; };
 		A61DEE23311B0E317F00FB2B2A1163C9 /* Pods-LRObjcTools_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LRObjcTools_Example-dummy.m"; sourceTree = "<group>"; };
 		A922DA9F278E0D973C653E5DC7F8081D /* Pods-LRObjcTools_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LRObjcTools_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		AF45AFF775944658EB3399696662CF92 /* LRPlaceholderTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LRPlaceholderTextView.m; path = LRObjcTools/Classes/LRPlaceholderTextView.m; sourceTree = "<group>"; };
+		B2B2A40086E733E207295F238AEC01DC /* LRPlaceholderTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LRPlaceholderTextView.h; path = LRObjcTools/Classes/LRPlaceholderTextView.h; sourceTree = "<group>"; };
+		B514FAAA2ED48401F8B14EA6ED959BEE /* LRObjcTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LRObjcTools.debug.xcconfig; sourceTree = "<group>"; };
+		BE878DC1AFFD4763E1DDF607AC18C267 /* LRObjcTools.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = LRObjcTools.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C0B30000E6CF4344DA088407EC48D528 /* LRBaseTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LRBaseTableViewCell.m; path = LRObjcTools/Classes/LRBaseTableViewCell.m; sourceTree = "<group>"; };
 		C183CD34E3352226D9FAC79A93F5F07B /* Pods-LRObjcTools_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LRObjcTools_Example-frameworks.sh"; sourceTree = "<group>"; };
+		C1B1AC7B9DDB4AD8E8C6B230EC7CC1A9 /* LRBaseCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LRBaseCollectionView.h; path = LRObjcTools/Classes/LRBaseCollectionView.h; sourceTree = "<group>"; };
+		C4700DB688D8C3AB3EABDB318D4E739F /* LRBaseViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LRBaseViewController.m; path = LRObjcTools/Classes/LRBaseViewController.m; sourceTree = "<group>"; };
+		D68DCBD6014D54074CC35FA5069E3EB5 /* LRBaseNavigationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LRBaseNavigationController.h; path = LRObjcTools/Classes/LRBaseNavigationController.h; sourceTree = "<group>"; };
+		DDDEE4145CD70300FADD8A02A208DE78 /* LRBaseCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LRBaseCollectionViewCell.m; path = LRObjcTools/Classes/LRBaseCollectionViewCell.m; sourceTree = "<group>"; };
+		E10523F5F77B0517074154C126FE5EF0 /* LRBaseCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LRBaseCollectionView.m; path = LRObjcTools/Classes/LRBaseCollectionView.m; sourceTree = "<group>"; };
 		E4FC5CDDAC297BF48B6D41CBD7FF4797 /* Pods-LRObjcTools_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LRObjcTools_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E9EE498CD9F3CCC22CDA36EFAB08F485 /* NSObject+Extension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Extension.m"; path = "LRObjcTools/Classes/NSObject+Extension.m"; sourceTree = "<group>"; };
+		F3AEB8D4522CEF5A5AA3259E8FA67CBC /* LRObjcTools-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LRObjcTools-Info.plist"; sourceTree = "<group>"; };
 		F437B6A3F6DBF81852021FB58B330A0E /* LRObjcTools */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LRObjcTools; path = LRObjcTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F50E72B506367C8DD1167B1FA3032D38 /* Pods-LRObjcTools_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LRObjcTools_Example.release.xcconfig"; sourceTree = "<group>"; };
-		FF12F3815AF6D9812C22A5451F354613 /* LRObjcTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LRObjcTools.debug.xcconfig; sourceTree = "<group>"; };
+		FE6BDA2A7B5DF4BBCD973477FAC0AF16 /* NSObject+Swizzle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+Swizzle.h"; path = "LRObjcTools/Classes/NSObject+Swizzle.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,27 +139,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9AFEDE1916C7549C71D9ED80A7C401F /* Frameworks */ = {
+		F313F1C11DBB769EA4DF9DD67D7C50EA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9392E7B97F64FA8AB9453520112C5D4 /* Foundation.framework in Frameworks */,
+				7FB5D06A2D35A7F7A1F514934D2EFEEB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		086340AC547D5EAD438ADF852597DEC7 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				1CAB7F39DD79F26E4F418AC4B45CCE52 /* LICENSE */,
-				2104224BB7C6DDC4B3A88760B2A0CA33 /* LRObjcTools.podspec */,
-				36DA4A35FE33DB7799B0D653BD8A4935 /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		18289DE09E3E268F8A964B4FDEA6BFC7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,21 +168,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		5EB9238A8A8D66D3F9E2E39FA5D1FCBF /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9B4BE5F3F3957F1DB8D0ECBC573B8B02 /* LRObjcTools.modulemap */,
-				86BE29D19F4CD5BC4A4B4799B62EB9B8 /* LRObjcTools-dummy.m */,
-				301ECE11400DA9F75A3B3B97947DC7E0 /* LRObjcTools-Info.plist */,
-				2C1E154BBB0CAFD171C2D2228C785655 /* LRObjcTools-prefix.pch */,
-				074C025C519B2DB1A9B84E55891DABCA /* LRObjcTools-umbrella.h */,
-				FF12F3815AF6D9812C22A5451F354613 /* LRObjcTools.debug.xcconfig */,
-				94240BCF18D04778F9435C43DF7D7FE5 /* LRObjcTools.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/LRObjcTools";
-			sourceTree = "<group>";
-		};
 		64307FD41F6D1A331BF3BB3E3449DFF4 /* Pods-LRObjcTools_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,14 +184,55 @@
 			path = "Target Support Files/Pods-LRObjcTools_Tests";
 			sourceTree = "<group>";
 		};
-		698A4AB45740697781B41D80FB39C862 /* LRObjcTools */ = {
+		79EE083898CC36F939A6F9105269041C /* LRObjcTools */ = {
 			isa = PBXGroup;
 			children = (
-				086340AC547D5EAD438ADF852597DEC7 /* Pod */,
-				5EB9238A8A8D66D3F9E2E39FA5D1FCBF /* Support Files */,
+				C1B1AC7B9DDB4AD8E8C6B230EC7CC1A9 /* LRBaseCollectionView.h */,
+				E10523F5F77B0517074154C126FE5EF0 /* LRBaseCollectionView.m */,
+				979680BD8D18924BC453B96CD22E4E48 /* LRBaseCollectionViewCell.h */,
+				DDDEE4145CD70300FADD8A02A208DE78 /* LRBaseCollectionViewCell.m */,
+				6A6B879BE65EACCD6535A09B90BF0D9C /* LRBaseNavigationBar.h */,
+				6E45C4A4328AF89414694CC34F0B33EE /* LRBaseNavigationBar.m */,
+				D68DCBD6014D54074CC35FA5069E3EB5 /* LRBaseNavigationController.h */,
+				84DFAB04ECACA33FD634DE63D9D28ECF /* LRBaseNavigationController.m */,
+				92227AC66FF4935B88A69B617E215138 /* LRBaseScrollView.h */,
+				02D4563F06084A1D38729DEE701FA528 /* LRBaseScrollView.m */,
+				6DFD2F3E8CC7FC02A64653BE0FC9DB2C /* LRBaseTableView.h */,
+				49C1ACCBD54DB99E37341B6F128B1FA5 /* LRBaseTableView.m */,
+				680AB0C1647C54449EB7FAA116005B98 /* LRBaseTableViewCell.h */,
+				C0B30000E6CF4344DA088407EC48D528 /* LRBaseTableViewCell.m */,
+				7945C8F087B97F232AB837C9E8FE6D36 /* LRBaseViewController.h */,
+				C4700DB688D8C3AB3EABDB318D4E739F /* LRBaseViewController.m */,
+				1B9DEAE8503CC0DE05D316113B331C87 /* LRDeviceService.h */,
+				9299E90B299019DA8CCA54208D8559A1 /* LRDeviceService.m */,
+				B2B2A40086E733E207295F238AEC01DC /* LRPlaceholderTextView.h */,
+				AF45AFF775944658EB3399696662CF92 /* LRPlaceholderTextView.m */,
+				16C136845CD5046BC687C14107D65D69 /* LRStepSlider.h */,
+				77DD755B3E04B2C2549629FAB7BF1219 /* LRStepSlider.m */,
+				1F113B4E4EBA1914FE389D13CAD8AB24 /* NSObject+Extension.h */,
+				E9EE498CD9F3CCC22CDA36EFAB08F485 /* NSObject+Extension.m */,
+				FE6BDA2A7B5DF4BBCD973477FAC0AF16 /* NSObject+Swizzle.h */,
+				68035A664D46C083C2B060BAE936E123 /* NSObject+Swizzle.m */,
+				B6D09D150D7FC9DCCE8BF2AF64C31333 /* Pod */,
+				9654E01F59F4BFCE877ACDD30012EA86 /* Support Files */,
 			);
 			name = LRObjcTools;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		9654E01F59F4BFCE877ACDD30012EA86 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				63B3628588277664152163839011DA90 /* LRObjcTools.modulemap */,
+				596D9E750EAEF68C1A2D392CE0AB7043 /* LRObjcTools-dummy.m */,
+				F3AEB8D4522CEF5A5AA3259E8FA67CBC /* LRObjcTools-Info.plist */,
+				3F9C59B04ADAE94E23F89FC9B66145AB /* LRObjcTools-prefix.pch */,
+				7A3A447CA4C2CDFA5689E6650CA96AC1 /* LRObjcTools-umbrella.h */,
+				B514FAAA2ED48401F8B14EA6ED959BEE /* LRObjcTools.debug.xcconfig */,
+				5EE7310AEA6BB480A5C3BC62804DF593 /* LRObjcTools.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/LRObjcTools";
 			sourceTree = "<group>";
 		};
 		A1682836995EDAF6E81C5B7AC233C379 /* Pods-LRObjcTools_Example */ = {
@@ -184,19 +252,21 @@
 			path = "Target Support Files/Pods-LRObjcTools_Example";
 			sourceTree = "<group>";
 		};
-		BCD426857FD2A60C40558F41C2F194FE /* Development Pods */ = {
+		B6D09D150D7FC9DCCE8BF2AF64C31333 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				698A4AB45740697781B41D80FB39C862 /* LRObjcTools */,
+				7849AB74AA5B9B2FB57F6209AB0EC4B6 /* LICENSE */,
+				BE878DC1AFFD4763E1DDF607AC18C267 /* LRObjcTools.podspec */,
+				9F26C3F011EDE479FA09CD1F89977D72 /* README.md */,
 			);
-			name = "Development Pods";
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				BCD426857FD2A60C40558F41C2F194FE /* Development Pods */,
+				E4D20266A6C1AEE912A546DBAA3235C2 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				18289DE09E3E268F8A964B4FDEA6BFC7 /* Products */,
 				E5D13E9F65D6898E047EDC867832A851 /* Targets Support Files */,
@@ -209,6 +279,14 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4D20266A6C1AEE912A546DBAA3235C2 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79EE083898CC36F939A6F9105269041C /* LRObjcTools */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		E5D13E9F65D6898E047EDC867832A851 /* Targets Support Files */ = {
@@ -231,11 +309,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		26C3BEE841FD4243721B51DA2D26CC9B /* Headers */ = {
+		8B08E172E1271AA2C09EE12537A3F19B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC6B7F6CF6ECA8FC13FD6FE70E174DE4 /* LRObjcTools-umbrella.h in Headers */,
+				AFEC58EC2F4E4EB3A6C72EA8F1D0ECB6 /* LRBaseCollectionView.h in Headers */,
+				7CDD34ACD88A3C8EAC66AA3F8CB1EA14 /* LRBaseCollectionViewCell.h in Headers */,
+				BB5226B9DDB7EDF7C083A66E8A2ECE6F /* LRBaseNavigationBar.h in Headers */,
+				991108277C7778391C82C46F51F5687F /* LRBaseNavigationController.h in Headers */,
+				2C3B26B9EE87C0B332424D8CDA9998CD /* LRBaseScrollView.h in Headers */,
+				B7B3FEB2F5C53D5A044F05CAFBFAA19D /* LRBaseTableView.h in Headers */,
+				38F4FB78C5E653FCB5CCF6CC5CF3D215 /* LRBaseTableViewCell.h in Headers */,
+				06A2900129A96DEB0466CB17480C31CE /* LRBaseViewController.h in Headers */,
+				91CBD01B504403B8FD8CD15EEA111904 /* LRDeviceService.h in Headers */,
+				B4B9B1892BC3FD1A633776C351BD0792 /* LRObjcTools-umbrella.h in Headers */,
+				DFC65DAA468912ADF50064BAEBA1BE43 /* LRPlaceholderTextView.h in Headers */,
+				FEF271112F2867C1B89A0AE4A72998DA /* LRStepSlider.h in Headers */,
+				8E2B18F520E41CE5E5B8EA188038CC8A /* NSObject+Extension.h in Headers */,
+				070A622AF6BB24D34AC39DF10334669C /* NSObject+Swizzle.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +353,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D1E339BF7E403A530C001B7169393D24 /* PBXTargetDependency */,
+				49E94C1480A1BB205D213478F5CFBAC8 /* PBXTargetDependency */,
 			);
 			name = "Pods-LRObjcTools_Example";
 			productName = Pods_LRObjcTools_Example;
@@ -281,7 +372,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				4126B9F6797020CE553662BEFE1D777E /* PBXTargetDependency */,
+				8F421BEE54142D1AB11113F762DB1BAA /* PBXTargetDependency */,
 			);
 			name = "Pods-LRObjcTools_Tests";
 			productName = Pods_LRObjcTools_Tests;
@@ -290,12 +381,12 @@
 		};
 		F3C029B0E73A90319F8D723BE90E899D /* LRObjcTools */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58E0EACA3BDBE1D0F403C9DDDB86250A /* Build configuration list for PBXNativeTarget "LRObjcTools" */;
+			buildConfigurationList = 452DABAB556A7638A810E08B368A17A9 /* Build configuration list for PBXNativeTarget "LRObjcTools" */;
 			buildPhases = (
-				26C3BEE841FD4243721B51DA2D26CC9B /* Headers */,
-				A8DC61DBA614C4F7A7A7A751BF2E4EC0 /* Sources */,
-				C9AFEDE1916C7549C71D9ED80A7C401F /* Frameworks */,
-				67BA6DEF0C23449D54F1AEDDF2ACB29E /* Resources */,
+				8B08E172E1271AA2C09EE12537A3F19B /* Headers */,
+				5CDA7A2C83078411BFBEED18503A948E /* Sources */,
+				F313F1C11DBB769EA4DF9DD67D7C50EA /* Frameworks */,
+				387DC9974B72DFAAE4EA7C235BEF7059 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -336,14 +427,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3BFDBEB689F691156DF73F4735A849DE /* Resources */ = {
+		387DC9974B72DFAAE4EA7C235BEF7059 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		67BA6DEF0C23449D54F1AEDDF2ACB29E /* Resources */ = {
+		3BFDBEB689F691156DF73F4735A849DE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -360,6 +451,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5CDA7A2C83078411BFBEED18503A948E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5B2CE3D46695C4C5A4F7015E06491C8 /* LRBaseCollectionView.m in Sources */,
+				B02F5021CF3B1C8C500E5601E242ED4A /* LRBaseCollectionViewCell.m in Sources */,
+				38C1A81AACBCE1092C6321213129494C /* LRBaseNavigationBar.m in Sources */,
+				59C14700E4DE598ECF7367DE7F1A9272 /* LRBaseNavigationController.m in Sources */,
+				476C8AB6276884CDAF3346A099495AF7 /* LRBaseScrollView.m in Sources */,
+				F008C64DAD84DAC6EEDD77563D34086C /* LRBaseTableView.m in Sources */,
+				40D3FA9CEDA9F1584BDB7AF7F71A9ECB /* LRBaseTableViewCell.m in Sources */,
+				3358A8A4F22B624E290B2E4A85F05D99 /* LRBaseViewController.m in Sources */,
+				0A5C6CE40D6F40A0BF8786054770B09D /* LRDeviceService.m in Sources */,
+				7620535D742300D0168A16CA0CA60D11 /* LRObjcTools-dummy.m in Sources */,
+				A458EED9033CA03963994DA0995548A9 /* LRPlaceholderTextView.m in Sources */,
+				89575DC1C06D3A3158365EE2D1F2618A /* LRStepSlider.m in Sources */,
+				6DEBFB7CCBE4534C200180E3A7E7A999 /* NSObject+Extension.m in Sources */,
+				7955D8F79D7CDACDF1EB462DB236B7AE /* NSObject+Swizzle.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6301131164B98FEBADEA39F872F76E02 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -376,28 +488,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A8DC61DBA614C4F7A7A7A751BF2E4EC0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				20B1955D04B256831D3D26DFD8D282CC /* LRObjcTools-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4126B9F6797020CE553662BEFE1D777E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-LRObjcTools_Example";
-			target = 2009A76C1664E48B81F1769BC01DF143 /* Pods-LRObjcTools_Example */;
-			targetProxy = A7FAF8B866FEDDC28251EBE5582B36D2 /* PBXContainerItemProxy */;
-		};
-		D1E339BF7E403A530C001B7169393D24 /* PBXTargetDependency */ = {
+		49E94C1480A1BB205D213478F5CFBAC8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LRObjcTools;
 			target = F3C029B0E73A90319F8D723BE90E899D /* LRObjcTools */;
-			targetProxy = 2774120E795FA022594F9D7856B090F8 /* PBXContainerItemProxy */;
+			targetProxy = 8E9103F7B4357F5956916190A03A199E /* PBXContainerItemProxy */;
+		};
+		8F421BEE54142D1AB11113F762DB1BAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-LRObjcTools_Example";
+			target = 2009A76C1664E48B81F1769BC01DF143 /* Pods-LRObjcTools_Example */;
+			targetProxy = C2632FDB7BE04A4D5947FD3274F098F4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -468,38 +572,6 @@
 			};
 			name = Debug;
 		};
-		63F1BAC5BD2264DEB78937FDC2F1E1C2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94240BCF18D04778F9435C43DF7D7FE5 /* LRObjcTools.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LRObjcTools/LRObjcTools-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LRObjcTools/LRObjcTools-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LRObjcTools/LRObjcTools.modulemap";
-				PRODUCT_MODULE_NAME = LRObjcTools;
-				PRODUCT_NAME = LRObjcTools;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -555,15 +627,16 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		922F472A22BD3160278D8EE3DACCC814 /* Debug */ = {
+		9712E5DF04CA25348179A1233015FE0D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF12F3815AF6D9812C22A5451F354613 /* LRObjcTools.debug.xcconfig */;
+			baseConfigurationReference = 5EE7310AEA6BB480A5C3BC62804DF593 /* LRObjcTools.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -577,7 +650,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/LRObjcTools/LRObjcTools-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/LRObjcTools/LRObjcTools-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/LRObjcTools/LRObjcTools.modulemap";
 				PRODUCT_MODULE_NAME = LRObjcTools;
@@ -587,10 +660,11 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		9BCB0FB409B2F26BA619E582C66982E5 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -659,6 +733,37 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		C5555F7FE331FF4B50E29B14AE24F551 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B514FAAA2ED48401F8B14EA6ED959BEE /* LRObjcTools.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LRObjcTools/LRObjcTools-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LRObjcTools/LRObjcTools-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LRObjcTools/LRObjcTools.modulemap";
+				PRODUCT_MODULE_NAME = LRObjcTools;
+				PRODUCT_NAME = LRObjcTools;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -738,20 +843,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		452DABAB556A7638A810E08B368A17A9 /* Build configuration list for PBXNativeTarget "LRObjcTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5555F7FE331FF4B50E29B14AE24F551 /* Debug */,
+				9712E5DF04CA25348179A1233015FE0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D299434AB35E7FD6F7921C8EF24742FF /* Debug */,
 				7EE7A78859F657F6BEFC651185B43192 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		58E0EACA3BDBE1D0F403C9DDDB86250A /* Build configuration list for PBXNativeTarget "LRObjcTools" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				922F472A22BD3160278D8EE3DACCC814 /* Debug */,
-				63F1BAC5BD2264DEB78937FDC2F1E1C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
