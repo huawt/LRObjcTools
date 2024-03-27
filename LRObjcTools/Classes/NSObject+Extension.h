@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isValid;
 - (BOOL)isEmpty;
 + (NSString *)fixEmptyString: (NSString *)aString;
+- (UIImage *)makeImage;
 @end
 
 @interface UITextField (Extension)
@@ -37,5 +38,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIButton (Extension)
 - (void)beEnabled;
 - (void)beDisabled;
+@end
+
+@interface UIApplication (Extension)
+@property (nonatomic, copy, readonly) NSString *appDisplayName;
 @end
 NS_ASSUME_NONNULL_END

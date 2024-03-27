@@ -67,6 +67,10 @@
 + (NSString *)fixEmptyString: (NSString *)aString {
     return [aString isValid] ? aString : @"-";
 }
+
+- (UIImage *)makeImage {
+    return [UIImage imageNamed:self];
+}
 @end
 
 @implementation UITextField (Extension)
@@ -167,5 +171,11 @@ static NSArray *LRControlDelayClasses;
 }
 - (void)beDisabled {
     self.userInteractionEnabled = NO;
+}
+@end
+
+@implementation UIApplication (Extension)
+- (NSString *)appDisplayName {
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
 }
 @end
