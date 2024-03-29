@@ -179,3 +179,41 @@ static NSArray *LRControlDelayClasses;
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
 }
 @end
+
+@implementation UIView (Extension)
+- (void)dashedLine: (UIColor *)color thickness: (CGFloat)thickness spacing: (CGFloat)spacing length: (CGFloat)length {
+    while (self.layer.sublayers.count) {
+        [self.layer.sublayers.lastObject removeFromSuperlayer];
+    }
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.strokeColor = color.CGColor;
+    shapeLayer.lineWidth = thickness;
+    shapeLayer.lineDashPattern = @[@(spacing), @(length)];
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathAddLines(path, NULL, (const CGPoint[]){
+        CGPointMake(0, CGRectGetHeight(self.bounds) / 2),
+        CGPointMake(CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) / 2)
+    }, 2);
+    shapeLayer.path = path;
+    CGPathRelease(path);
+    [self.layer insertSublayer:shapeLayer atIndex:0];
+}
+@end
+
+@implementation CALayer (Extension)
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        SEL sysSEL = @selector(display);
+        SEL customSEL = @selector(displayLR);
+        [self instanceSwizzleSelector:customSEL originalSelector:sysSEL];
+    });
+}
+- (void)displayLR {
+    if (self.frame.size.width * self.frame.size.height == 0) {
+        return;
+    }
+    [self displayLR];
+}
+
+@end

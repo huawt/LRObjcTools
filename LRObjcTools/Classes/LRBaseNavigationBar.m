@@ -52,6 +52,10 @@
 - (void)setNavigationBarTitleFont:(UIFont *)font {
     self.titleLabel.font = font;
 }
+
+- (void)setNavigationBarTitleColor:(UIColor *)titleColor {
+    self.titleLabel.textColor = titleColor;
+}
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [UILabel new];

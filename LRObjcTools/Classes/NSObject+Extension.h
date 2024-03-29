@@ -43,4 +43,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIApplication (Extension)
 @property (nonatomic, copy, readonly) NSString *appDisplayName;
 @end
+
+@interface UIView (Extension)
+- (void)dashedLine: (UIColor *)color thickness: (CGFloat)thickness spacing: (CGFloat)spacing length: (CGFloat)length;
+@end
+
+@interface CALayer (Extension)
+
+@end
 NS_ASSUME_NONNULL_END

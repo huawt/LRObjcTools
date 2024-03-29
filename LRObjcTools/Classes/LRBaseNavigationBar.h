@@ -9,6 +9,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setNavigationRight:(UIView *)barButton;
 - (void)setNavigationBarTitle: (NSString *)title;
 - (void)setNavigationBarTitleFont: (UIFont *)font;
+- (void)setNavigationBarTitleColor: (UIColor *)titleColor;
+
 @end
 
 NS_ASSUME_NONNULL_END
