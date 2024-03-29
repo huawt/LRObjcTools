@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		1DEC7F255432F32E7A474FB6 /* Pods_LRObjcTools_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LRObjcTools_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		36F7643D596EF2BC5786AD39 /* LRObjcTools.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LRObjcTools.podspec; path = ../LRObjcTools.podspec; sourceTree = "<group>"; };
+		36F7643D596EF2BC5786AD39 /* LRObjcTools.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LRObjcTools.podspec; path = ../LRObjcTools.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		44D4860F6B906DB0622B05AD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		52DAD49EE9592F60E64F4C2D /* Pods_LRObjcTools_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LRObjcTools_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5555A0831328F39B70B60D98 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
