@@ -3,8 +3,26 @@
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
+@interface UIView (Extension)
+@property (nonatomic) CGFloat left;        ///< Shortcut for frame.origin.x.
+@property (nonatomic) CGFloat top;         ///< Shortcut for frame.origin.y
+@property (nonatomic) CGFloat right;       ///< Shortcut for frame.origin.x + frame.size.width
+@property (nonatomic) CGFloat bottom;      ///< Shortcut for frame.origin.y + frame.size.height
+@property (nonatomic) CGFloat width;       ///< Shortcut for frame.size.width.
+@property (nonatomic) CGFloat height;      ///< Shortcut for frame.size.height.
+@property (nonatomic) CGFloat centerX;     ///< Shortcut for center.x
+@property (nonatomic) CGFloat centerY;     ///< Shortcut for center.y
+@property (nonatomic) CGPoint origin;      ///< Shortcut for frame.origin.
+@property (nonatomic) CGSize  size;        ///< Shortcut for frame.size.
+- (void)dashedLine: (UIColor *)color thickness: (CGFloat)thickness spacing: (CGFloat)spacing length: (CGFloat)length;
+@end
+
 @interface UILabel (Extension)
 + (instancetype)labelText: (NSString *)text font: (UIFont*)font color: (UIColor *)color align: (NSTextAlignment)alignment lines: (CGFloat)lines;
+@end
+
+@interface UIColor (Extension)
++ (instancetype)hexStringColor:(NSString *)hexStr;
 @end
 
 @interface NSString (Extension)
@@ -15,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isEmpty;
 + (NSString *)fixEmptyString: (NSString *)aString;
 - (UIImage *)makeImage;
+- (UIColor *)makeColor;
 @end
 
 @interface UITextField (Extension)
@@ -44,9 +63,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) NSString *appDisplayName;
 @end
 
-@interface UIView (Extension)
-- (void)dashedLine: (UIColor *)color thickness: (CGFloat)thickness spacing: (CGFloat)spacing length: (CGFloat)length;
-@end
+
 
 @interface CALayer (Extension)
 
