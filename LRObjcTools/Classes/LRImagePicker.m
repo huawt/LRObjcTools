@@ -31,7 +31,7 @@
 }
 
 - (void)takePhoto:(nonnull ImageHandler)handler {
-    if ([LRDeviceService cameraStatus] == AVAuthorizationStatusDenied) {
+    if ([LRDeviceService cameraStatus] != AVAuthorizationStatusAuthorized) {
         return;
     }
     self.handler = handler;
