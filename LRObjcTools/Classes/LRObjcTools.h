@@ -20,6 +20,8 @@ FOUNDATION_EXPORT const unsigned char LRObjcToolsVersionString[];
 #import <LRObjcTools/LRDeviceService.h>
 #import <LRObjcTools/NSObject+Swizzle.h>
 #import <LRObjcTools/NSObject+Extension.h>
+#import <LRObjcTools/LRImagePicker.h>
+#import <LRObjcTools/LRImageTool.h>
 
 #else
 
@@ -37,6 +39,8 @@ FOUNDATION_EXPORT const unsigned char LRObjcToolsVersionString[];
 #import "LRDeviceService.h"
 #import "NSObject+Swizzle.h"
 #import "NSObject+Extension.h"
+#import "LRImagePicker.h"
+#import "LRImageTool.h"
 
 #endif /* __has_include */
 

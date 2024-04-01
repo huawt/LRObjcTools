@@ -19,6 +19,8 @@
 #import "LRBaseTableViewCell.h"
 #import "LRBaseViewController.h"
 #import "LRDeviceService.h"
+#import "LRImagePicker.h"
+#import "LRImageTool.h"
 #import "LRLayoutButton.h"
 #import "LRObjcTools.h"
 #import "LRPlaceholderTextView.h"

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'LRObjcTools'
-  s.version          = '0.0.3'
+  s.version          = '0.0.4'
   s.summary          = 'A short description of LRObjcTools.'
   s.description      = 'A short description of LRObjcTools.'
   s.homepage         = 'https://github.com/huawt/LRObjcTools'
@@ -9,4 +9,5 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/huawt/LRObjcTools.git', :tag => s.version.to_s }
   s.ios.deployment_target = '12.0'
   s.source_files = 'LRObjcTools/Classes/**/*'
+  s.frameworks = 'UIKit','Foundation','AVFoundation','ContactsUI','Contacts','CoreLocation'
 end
