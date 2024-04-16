@@ -28,9 +28,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSString (Extension)
 - (NSString *)currencyGrouped;
 - (NSString *)seperateBy: (NSInteger)length;
+- (NSString *)seperateBy: (NSInteger)length sepeator: (NSString *)sepeator;
 - (NSString *)lastString: (NSInteger)k;
 - (BOOL)isValid;
++ (BOOL)isValid: (NSString *)aString;
 - (BOOL)isEmpty;
++ (BOOL)isEmpty:(NSString *)aString;
 + (NSString *)fixEmptyString: (NSString *)aString;
 - (UIImage *)makeImage;
 - (UIColor *)makeColor;

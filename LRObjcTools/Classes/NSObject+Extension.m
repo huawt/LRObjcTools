@@ -45,6 +45,10 @@
     }
     return [array componentsJoinedByString:@" "];
 }
+- (NSString *)seperateBy:(NSInteger)length sepeator:(NSString *)sepeator {
+    NSString *string = [self seperateBy:length];
+    return  [string stringByReplacingOccurrencesOfString:@" " withString:sepeator];
+}
 - (NSString *)lastString: (NSInteger)k {
     return self.length <= k ? self : [self substringFromIndex:self.length - k];
 }
@@ -60,10 +64,21 @@
     }
     return NO;
 }
++ (BOOL)isEmpty:(NSString *)aString {
+    if (aString == nil) {
+        return YES;
+    }
+    return [aString isEmpty];
+}
 - (BOOL)isValid {
     return ![self isEmpty];
 }
-
++ (BOOL)isValid:(NSString *)aString {
+    if (aString == nil) {
+        return NO;
+    }
+    return [aString isValid];
+}
 + (NSString *)fixEmptyString: (NSString *)aString {
     return [aString isValid] ? aString : @"-";
 }

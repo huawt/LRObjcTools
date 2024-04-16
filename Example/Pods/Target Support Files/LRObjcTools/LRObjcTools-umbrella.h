@@ -17,6 +17,7 @@
 #import "LRBaseScrollView.h"
 #import "LRBaseTableView.h"
 #import "LRBaseTableViewCell.h"
+#import "LRBaseTextField.h"
 #import "LRBaseViewController.h"
 #import "LRDeviceService.h"
 #import "LRImagePicker.h"

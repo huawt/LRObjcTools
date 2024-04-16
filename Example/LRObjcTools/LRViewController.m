@@ -7,6 +7,7 @@
 //
 
 #import "LRViewController.h"
+#import <LRObjcTools/LRObjcTools.h>
 
 @interface LRViewController ()
 
@@ -18,6 +19,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    LRBaseTextField *textf = [[LRBaseTextField alloc] initWithFrame:CGRectMake(10, 100, 200, 50)];
+    textf.placeholderFont = [UIFont systemFontOfSize:20 weight:UIFontWeightBold];
+    textf.placeholder = @"test-test";
+    textf.placeholderColor = [UIColor yellowColor];
+    [self.view addSubview:textf];
 }
 
 - (void)didReceiveMemoryWarning
