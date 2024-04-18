@@ -84,6 +84,13 @@
     }
 }
 
+- (void)setCurrentValueBackgroundImage:(UIImage *)currentValueBackgroundImage {
+    _currentValueBackgroundImage = currentValueBackgroundImage;
+    if (currentValueBackgroundImage) {
+        self.currentValueImage.image = currentValueBackgroundImage;
+    }
+}
+
 - (UIView *)currentValueView {
     if (!_currentValueView) {
         _currentValueView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 58, 26)];
