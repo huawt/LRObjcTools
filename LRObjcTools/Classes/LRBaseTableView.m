@@ -50,12 +50,12 @@
 }
 
 - (void)registerClassCell:(Class)cellClass {
-    NSString *identifier = NSStringFromClass(cellClass);
+    NSString *identifier = [NSStringFromClass(cellClass) componentsSeparatedByString:@"."].lastObject;
     [self registerClass:cellClass forCellReuseIdentifier:identifier];
 }
 
 - (void)registerNibCell:(Class)cellClass {
-    NSString *identifier = NSStringFromClass(cellClass);
+    NSString *identifier = [NSStringFromClass(cellClass) componentsSeparatedByString:@"."].lastObject;
     [self registerNib:[UINib nibWithNibName:identifier bundle:[NSBundle mainBundle]] forCellReuseIdentifier:identifier];
 }
 
