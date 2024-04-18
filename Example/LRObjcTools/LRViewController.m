@@ -10,6 +10,7 @@
 #import <LRObjcTools/LRObjcTools.h>
 
 @interface LRViewController ()
+@property (weak, nonatomic) IBOutlet LRSlider *slider;
 
 @end
 
@@ -24,6 +25,11 @@
     textf.placeholder = @"test-test";
     textf.placeholderColor = [UIColor yellowColor];
     [self.view addSubview:textf];
+    
+    self.slider.showCurrentValue = YES;
+    self.slider.currentValueFormatHandler = ^NSString * _Nonnull(CGFloat currentValue) {
+        return  [NSString stringWithFormat:@"%.0f", currentValue];
+    };
 }
 
 - (void)didReceiveMemoryWarning

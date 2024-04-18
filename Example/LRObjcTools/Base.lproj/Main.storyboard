@@ -30,15 +30,34 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholderFontString" value="PingFangSC-Regular##20"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="1up-zM-4UO" customClass="LRSlider">
+                                <rect key="frame" x="8" y="120" width="359" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.2196078431372549" green="0.3411764705882353" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="trackHeight">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="currentValueColor">
+                                        <color key="value" red="0.87058823529999996" green="0.2470588235" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="1up-zM-4UO" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="10" id="MlN-pO-Sku"/>
                             <constraint firstItem="Iuu-e1-F8v" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" id="OOc-em-SJA"/>
                             <constraint firstItem="Iuu-e1-F8v" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="VGV-R9-N6A"/>
                             <constraint firstItem="Iuu-e1-F8v" firstAttribute="trailing" secondItem="TpU-gO-2f1" secondAttribute="trailingMargin" id="hxA-rR-1OS"/>
                             <constraint firstItem="Iuu-e1-F8v" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="l46-Br-LhM"/>
+                            <constraint firstAttribute="trailing" secondItem="1up-zM-4UO" secondAttribute="trailing" constant="10" id="p8J-mh-sYJ"/>
+                            <constraint firstItem="1up-zM-4UO" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="100" id="qfg-zW-VBy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="slider" destination="1up-zM-4UO" id="3dE-xc-VGw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

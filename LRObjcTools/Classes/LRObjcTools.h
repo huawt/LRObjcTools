@@ -17,6 +17,7 @@ FOUNDATION_EXPORT const unsigned char LRObjcToolsVersionString[];
 #import <LRObjcTools/LRPlaceholderTextView.h>
 #import <LRObjcTools/LRBaseTextField.h>
 #import <LRObjcTools/LRStepSlider.h>
+#import <LRObjcTools/LRSlider.h>
 #import <LRObjcTools/LRLayoutButton.h>
 #import <LRObjcTools/LRDeviceService.h>
 #import <LRObjcTools/NSObject+Swizzle.h>
@@ -37,6 +38,7 @@ FOUNDATION_EXPORT const unsigned char LRObjcToolsVersionString[];
 #import "LRPlaceholderTextView.h"
 #import "LRBaseTextField.h"
 #import "LRStepSlider.h"
+#import "LRSlider.h"
 #import "LRLayoutButton.h"
 #import "LRDeviceService.h"
 #import "NSObject+Swizzle.h"
