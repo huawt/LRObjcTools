@@ -37,7 +37,7 @@
     
 }
 + (NSString *)identifer {
-    return NSStringFromClass([self class]);
+    return [NSStringFromClass([self class]) componentsSeparatedByString:@"."].lastObject;
 }
 
 @end
