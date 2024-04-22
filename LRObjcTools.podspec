@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'LRObjcTools'
-  s.version          = '0.0.8'
+  s.version          = '0.0.9'
   s.summary          = 'A short description of LRObjcTools.'
   s.description      = 'A short description of LRObjcTools.'
   s.homepage         = 'https://github.com/huawt/LRObjcTools'

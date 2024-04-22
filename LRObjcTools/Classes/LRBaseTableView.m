@@ -1,6 +1,10 @@
 
 #import "LRBaseTableView.h"
 
+@interface LRBaseTableView ()
+@property (nonatomic, strong) NSMutableArray<UIView *> *sectionBacks;
+@end
+
 @implementation LRBaseTableView
 
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style
@@ -59,4 +63,50 @@
     [self registerNib:[UINib nibWithNibName:identifier bundle:[NSBundle mainBundle]] forCellReuseIdentifier:identifier];
 }
 
+- (void)registerNibClassCell:(Class)cellClass {
+    NSString *identifier = [NSStringFromClass(cellClass) componentsSeparatedByString:@"."].lastObject;
+    [self registerNib:[UINib nibWithNibName:identifier bundle:[NSBundle mainBundle]] forCellReuseIdentifier:identifier];
+}
+
+- (void)reloadData {
+    [super reloadData];
+    [self checkSectionBackgroundSetting];
+}
+
+- (void)checkSectionBackgroundSetting {
+    NSInteger number = self.numberOfSections;
+    BOOL show = self.showSectionBackground > 0 && number > 0;
+    for (UIView *sub in self.sectionBacks) {
+        sub.hidden = !show;
+    }
+    if (!show) { return; }
+    if (number == 0) { return; }
+    for (NSInteger index = 0; index < number; index++) {
+        CGRect headerRect = [self rectForHeaderInSection:index];
+        CGRect sectionRect = [self rectForSection:index];
+        CGRect foortRect = [self rectForFooterInSection:index];
+        CGRect backFrame = CGRectMake(0, CGRectGetMaxY(headerRect), sectionRect.size.width, sectionRect.size.height - headerRect.size.height - foortRect.size.height);
+        if (index < self.sectionBacks.count) {
+            UIView *view = [self.sectionBacks objectAtIndex:index];
+            view.frame = backFrame;
+            view.backgroundColor = self.sectionBackgroundColor;
+            view.layer.cornerRadius = self.sectionBackgroundCornerRadius;
+            view.clipsToBounds = self.sectionBackgroundCornerRadius > 0;
+        } else {
+            UIView *view = [[UIView alloc] initWithFrame:backFrame];
+            view.backgroundColor = self.sectionBackgroundColor;
+            view.layer.cornerRadius = self.sectionBackgroundCornerRadius;
+            view.clipsToBounds = self.sectionBackgroundCornerRadius > 0;
+            [self insertSubview:view atIndex:0];
+            [self.sectionBacks addObject:view];
+        }
+    }
+}
+
+- (NSMutableArray<UIView *> *)sectionBacks {
+    if (!_sectionBacks) {
+        _sectionBacks = [NSMutableArray array];
+    }
+    return _sectionBacks;
+}
 @end
