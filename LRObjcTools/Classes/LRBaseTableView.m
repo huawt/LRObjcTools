@@ -85,7 +85,7 @@
         CGRect headerRect = [self rectForHeaderInSection:index];
         CGRect sectionRect = [self rectForSection:index];
         CGRect foortRect = [self rectForFooterInSection:index];
-        CGRect backFrame = CGRectMake(0, CGRectGetMaxY(headerRect), sectionRect.size.width, sectionRect.size.height - headerRect.size.height - foortRect.size.height);
+        CGRect backFrame = CGRectMake(self.sectionBackgroundEdgePaddding, CGRectGetMaxY(headerRect), sectionRect.size.width - (self.sectionBackgroundEdgePaddding * 2), sectionRect.size.height - headerRect.size.height - foortRect.size.height);
         if (index < self.sectionBacks.count) {
             UIView *view = [self.sectionBacks objectAtIndex:index];
             view.frame = backFrame;
