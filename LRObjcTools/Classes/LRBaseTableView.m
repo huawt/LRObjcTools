@@ -85,7 +85,16 @@
         CGRect headerRect = [self rectForHeaderInSection:index];
         CGRect sectionRect = [self rectForSection:index];
         CGRect foortRect = [self rectForFooterInSection:index];
-        CGRect backFrame = CGRectMake(self.sectionBackgroundEdgePaddding, CGRectGetMaxY(headerRect), sectionRect.size.width - (self.sectionBackgroundEdgePaddding * 2), sectionRect.size.height - headerRect.size.height - foortRect.size.height);
+        CGFloat backOriginY = CGRectGetMaxY(headerRect);
+        CGFloat backHeight = sectionRect.size.height - headerRect.size.height - foortRect.size.height;
+        if (self.sectionBackgroundContainsHeader > 0) {
+            backOriginY = CGRectGetMinY(headerRect);
+            backHeight += headerRect.size.height;
+        }
+        if (self.sectionBackgroundContainsFooter> 0) {
+            backHeight += foortRect.size.height;
+        }
+        CGRect backFrame = CGRectMake(self.sectionBackgroundEdgePaddding, backOriginY, sectionRect.size.width - (self.sectionBackgroundEdgePaddding * 2), backHeight);
         if (index < self.sectionBacks.count) {
             UIView *view = [self.sectionBacks objectAtIndex:index];
             view.frame = backFrame;
@@ -100,6 +109,13 @@
             [self insertSubview:view atIndex:0];
             [self.sectionBacks addObject:view];
         }
+    }
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    for (UIView *sub in self.sectionBacks) {
+        [self insertSubview:sub atIndex:0];
     }
 }
 
