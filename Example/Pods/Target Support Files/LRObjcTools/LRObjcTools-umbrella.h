@@ -20,6 +20,7 @@
 #import "LRBaseTextField.h"
 #import "LRBaseViewController.h"
 #import "LRDeviceService.h"
+#import "LRHostManager.h"
 #import "LRImagePicker.h"
 #import "LRImageTool.h"
 #import "LRLayoutButton.h"

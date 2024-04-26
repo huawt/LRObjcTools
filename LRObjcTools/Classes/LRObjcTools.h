@@ -24,6 +24,7 @@ FOUNDATION_EXPORT const unsigned char LRObjcToolsVersionString[];
 #import <LRObjcTools/NSObject+Extension.h>
 #import <LRObjcTools/LRImagePicker.h>
 #import <LRObjcTools/LRImageTool.h>
+#import <LRObjcTools/LRHostManager.h>
 
 #else
 
@@ -45,6 +46,7 @@ FOUNDATION_EXPORT const unsigned char LRObjcToolsVersionString[];
 #import "NSObject+Extension.h"
 #import "LRImagePicker.h"
 #import "LRImageTool.h"
+#import "LRHostManager.h"
 
 #endif /* __has_include */
 
