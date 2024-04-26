@@ -53,6 +53,9 @@
         !completion?:completion(YES);
     }
 }
++ (void)hostSuccess {
+    [LRHostManager shared].retryTimes = 0;
+}
 - (void)setValidHost:(NSString *)validHost {
     _validHost = validHost;
     if ([validHost isValid]) {

@@ -8,6 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)shared;
 + (void)checkHost: (NSString *)currentUrl completion: (void(^)(BOOL granted))completion;
 + (void)registerHosts: (NSArray *)hosts;
++ (void)hostSuccess;
 @end
 
 NS_ASSUME_NONNULL_END
