@@ -54,6 +54,6 @@ void LRMainAfter(CGFloat time, dispatch_block_t executed);
 void LRMainQueue(dispatch_block_t executed);
 
 @interface LRObjcTools : NSObject
-
++ (void)clearWebViewCache;
 @end
 
