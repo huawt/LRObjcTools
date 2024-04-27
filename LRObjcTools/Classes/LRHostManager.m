@@ -19,19 +19,25 @@
 {
     self = [super init];
     if (self) {
-        NSString *key = @"LRHostManager - validHost - key";
-        NSString *host = [[NSUserDefaults standardUserDefaults] objectForKey:key];
-        if ([host isValid]) {
-            self.validHost = host;
-        }
-        if ([NSString isEmpty:self.validHost] && self.hosts.count > 0) {
-            self.validHost = self.hosts.firstObject;
-        }
+        [self loadHost];
     }
     return self;
 }
+- (void)loadHost {
+    NSString *key = @"LRHostManager - validHost - key";
+    NSString *host = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+    if ([host isValid]) {
+        self.validHost = host;
+    }
+    if ([NSString isEmpty:self.validHost] && self.hosts.count > 0) {
+        self.validHost = self.hosts.firstObject;
+    }
+}
 + (void)registerHosts:(NSArray *)hosts {
     [LRHostManager shared].hosts = hosts;
+    if ([NSString isEmpty:[LRHostManager shared].validHost]) {
+        [[LRHostManager shared] loadHost];
+    }
 }
 + (void)checkHost:(NSString *)currentUrl completion:(void (^)(BOOL))completion {
     if ([LRHostManager shared].retryTimes >= [LRHostManager shared].hosts.count) {
