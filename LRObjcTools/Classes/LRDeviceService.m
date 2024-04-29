@@ -1,12 +1,7 @@
-
 #import "LRDeviceService.h"
-
 @interface LRDeviceService ()
-
 @end
-
 @implementation LRDeviceService
-
 + (BOOL)cameraOpen {
     return [LRDeviceService cameraStatus] == AVAuthorizationStatusAuthorized;
 }
@@ -20,7 +15,6 @@
         });
     }];
 }
-
 + (BOOL)locationOpen {
     return [LRDeviceService locationStatus] == kCLAuthorizationStatusAuthorizedAlways || [LRDeviceService locationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse;
 }
@@ -35,7 +29,6 @@
         !handler?:handler(NO);
     });
 }
-
 + (BOOL)ctOpen {
     return [LRDeviceService ctStatus] == CNAuthorizationStatusAuthorized;
 }
@@ -49,13 +42,10 @@
         });
     }];
 }
-
 + (void)goSettingPage {
     NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
         [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
     }
 }
-
-
 @end

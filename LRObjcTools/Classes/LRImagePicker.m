@@ -1,4 +1,3 @@
-
 #import "LRImagePicker.h"
 #import "LRDeviceService.h"
 @interface LRImagePicker ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -7,7 +6,6 @@
 @property (nonatomic, copy) ImageHandler handler;
 @end
 @implementation LRImagePicker
-
 + (nonnull instancetype)shared {
     static id _singleInstance_ = nil;
     static dispatch_once_t onceToken;
@@ -16,20 +14,16 @@
     });
     return _singleInstance_;
 }
-
 + (void)imagePick:(nonnull ImageHandler)handler {
     [[LRImagePicker shared] imagePick:handler];
 }
-
 - (void)imagePick:(nonnull ImageHandler)handler {
     self.handler = handler;
     [[UIApplication sharedApplication].delegate.window.rootViewController presentViewController:self.image animated:YES completion:nil];
 }
-
 + (void)takePhoto:(nonnull ImageHandler)handler {
     [[LRImagePicker shared] takePhoto:handler];
 }
-
 - (void)takePhoto:(nonnull ImageHandler)handler {
     if ([LRDeviceService cameraStatus] != AVAuthorizationStatusAuthorized) {
         return;
@@ -37,19 +31,16 @@
     self.handler = handler;
     [[UIApplication sharedApplication].delegate.window.rootViewController presentViewController:self.camera animated:YES completion:nil];
 }
-
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [picker dismissViewControllerAnimated:true completion:nil];
     self.handler = nil;
 }
-
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
     [picker dismissViewControllerAnimated:true completion:nil];
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     !self.handler?:self.handler(image);
     self.handler = nil;
 }
-
 - (UIImagePickerController *)image {
     if (!_image) {
         _image = [UIImagePickerController new];
@@ -59,7 +50,6 @@
     }
     return _image;
 }
-
 - (UIImagePickerController *)camera {
     if (!_camera) {
         _camera = [UIImagePickerController new];

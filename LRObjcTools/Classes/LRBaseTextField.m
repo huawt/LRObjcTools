@@ -1,7 +1,5 @@
-
 #import "LRBaseTextField.h"
 #import "NSObject+Extension.h"
-
 @implementation LRBaseTextField
 - (void)setPlaceholderColor:(UIColor *)placeholderColor {
     _placeholderColor = placeholderColor;

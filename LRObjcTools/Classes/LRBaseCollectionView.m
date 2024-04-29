@@ -1,9 +1,5 @@
-
-
 #import "LRBaseCollectionView.h"
-
 @implementation LRBaseCollectionView
-
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout
 {
     self = [super initWithFrame:frame collectionViewLayout:layout];
@@ -12,7 +8,6 @@
     }
     return self;
 }
-
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
@@ -21,12 +16,10 @@
     }
     return self;
 }
-
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self config];
 }
-
 - (void)config {
     self.backgroundColor = [UIColor clearColor];
     self.contentInset = UIEdgeInsetsZero;
@@ -39,5 +32,6 @@
     self.scrollIndicatorInsets = self.contentInset;
     self.alwaysBounceVertical = NO;
     self.alwaysBounceHorizontal = NO;
+    self.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
 }
 @end

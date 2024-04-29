@@ -1,10 +1,10 @@
-
 #import "LRHostManager.h"
 #import "NSObject+Extension.h"
 @interface LRHostManager ()
 @property (nonatomic, copy, readwrite) NSString *validHost;
 @property (nonatomic, strong) NSArray *hosts;
 @property (nonatomic, assign) NSInteger retryTimes;
+@property (nonatomic, copy) NSString *hostKey;
 @end
 @implementation LRHostManager
 + (instancetype)shared {
@@ -24,8 +24,7 @@
     return self;
 }
 - (void)loadHost {
-    NSString *key = @"LRHostManager - validHost - key";
-    NSString *host = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+    NSString *host = [[NSUserDefaults standardUserDefaults] objectForKey:[LRHostManager shared].hostKey];
     if ([host isValid]) {
         self.validHost = host;
     }
@@ -65,9 +64,20 @@
 - (void)setValidHost:(NSString *)validHost {
     _validHost = validHost;
     if ([validHost isValid]) {
-        NSString *key = @"LRHostManager - validHost - key";
-        [[NSUserDefaults standardUserDefaults] setObject:validHost forKey:key];
+        [[NSUserDefaults standardUserDefaults] setObject:validHost forKey:[LRHostManager shared].hostKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
+}
+- (NSString *)hostKey {
+    if (!_hostKey) {
+        NSString *key = @"LRHostManager - validHost - key";
+        NSDictionary *infoDict = [NSBundle mainBundle].infoDictionary;
+        NSString *identifier = [infoDict objectForKey:@"CFBundleIdentifier"];
+        if ([NSString isValid:identifier]) {
+            key = [NSString stringWithFormat:@"%@-validHost-key", identifier];
+        }
+        _hostKey = key;
+    }
+    return _hostKey;
 }
 @end

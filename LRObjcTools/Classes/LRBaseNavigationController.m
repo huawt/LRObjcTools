@@ -1,12 +1,7 @@
-
 #import "LRBaseNavigationController.h"
-
 @interface LRBaseNavigationController ()
-
 @end
-
 @implementation LRBaseNavigationController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.interactivePopGestureRecognizer.enabled = NO;
@@ -21,5 +16,4 @@
     viewController.hidesBottomBarWhenPushed = self.viewControllers.count > 0;
     [super pushViewController:viewController animated:animated];
 }
-
 @end

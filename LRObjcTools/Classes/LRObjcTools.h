@@ -1,11 +1,7 @@
-
 #import <Foundation/Foundation.h>
-
 #if __has_include(<LRObjcTools/LRObjcTools.h>)
-
 FOUNDATION_EXPORT double LRObjcToolsVersionNumber;
 FOUNDATION_EXPORT const unsigned char LRObjcToolsVersionString[];
-
 #import <LRObjcTools/LRBaseTableView.h>
 #import <LRObjcTools/LRBaseScrollView.h>
 #import <LRObjcTools/LRBaseNavigationBar.h>
@@ -25,9 +21,7 @@ FOUNDATION_EXPORT const unsigned char LRObjcToolsVersionString[];
 #import <LRObjcTools/LRImagePicker.h>
 #import <LRObjcTools/LRImageTool.h>
 #import <LRObjcTools/LRHostManager.h>
-
 #else
-
 #import "LRBaseTableView.h"
 #import "LRBaseScrollView.h"
 #import "LRBaseNavigationBar.h"
@@ -47,13 +41,9 @@ FOUNDATION_EXPORT const unsigned char LRObjcToolsVersionString[];
 #import "LRImagePicker.h"
 #import "LRImageTool.h"
 #import "LRHostManager.h"
-
 #endif /* __has_include */
-
 void LRMainAfter(CGFloat time, dispatch_block_t executed);
 void LRMainQueue(dispatch_block_t executed);
-
 @interface LRObjcTools : NSObject
 + (void)clearWebViewCache;
 @end
-

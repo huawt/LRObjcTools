@@ -1,8 +1,5 @@
-
 #import <Foundation/Foundation.h>
-
 NS_ASSUME_NONNULL_BEGIN
-
 @interface LRHostManager : NSObject
 @property (nonatomic, copy, readonly) NSString *validHost;
 + (instancetype)shared;
@@ -10,5 +7,4 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)registerHosts: (NSArray *)hosts;
 + (void)hostSuccess;
 @end
-
 NS_ASSUME_NONNULL_END

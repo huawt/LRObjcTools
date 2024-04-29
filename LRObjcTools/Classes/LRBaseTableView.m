@@ -1,12 +1,8 @@
-
 #import "LRBaseTableView.h"
-
 @interface LRBaseTableView ()
 @property (nonatomic, strong) NSMutableArray<UIView *> *sectionBacks;
 @end
-
 @implementation LRBaseTableView
-
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style
 {
     self = [super initWithFrame:frame style:style];
@@ -15,12 +11,10 @@
     }
     return self;
 }
-
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self setUp];
 }
-
 - (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
@@ -28,7 +22,6 @@
     }
     return  self;
 }
-
 - (void)setUp {
     self.backgroundColor = [UIColor clearColor];
     if (@available(iOS 11.0, *)) {
@@ -37,12 +30,12 @@
     self.showsVerticalScrollIndicator = NO;
     self.showsHorizontalScrollIndicator = NO;
     self.contentInset = UIEdgeInsetsZero;
-    
     self.estimatedRowHeight = 0;
     self.estimatedSectionFooterHeight = 0;
     self.estimatedSectionHeaderHeight = 0;
     self.clipsToBounds = YES;
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     if (@available(iOS 15.0, *)) {
         self.sectionHeaderTopPadding = 0;
         self.fillerRowHeight = 0;
@@ -52,27 +45,22 @@
     }
     self.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, CGFLOAT_MIN)];
 }
-
 - (void)registerClassCell:(Class)cellClass {
     NSString *identifier = [NSStringFromClass(cellClass) componentsSeparatedByString:@"."].lastObject;
     [self registerClass:cellClass forCellReuseIdentifier:identifier];
 }
-
 - (void)registerNibCell:(Class)cellClass {
     NSString *identifier = [NSStringFromClass(cellClass) componentsSeparatedByString:@"."].lastObject;
     [self registerNib:[UINib nibWithNibName:identifier bundle:[NSBundle mainBundle]] forCellReuseIdentifier:identifier];
 }
-
 - (void)registerNibClassCell:(Class)cellClass {
     NSString *identifier = [NSStringFromClass(cellClass) componentsSeparatedByString:@"."].lastObject;
     [self registerNib:[UINib nibWithNibName:identifier bundle:[NSBundle mainBundle]] forCellReuseIdentifier:identifier];
 }
-
 - (void)reloadData {
     [super reloadData];
     [self checkSectionBackgroundSetting];
 }
-
 - (void)checkSectionBackgroundSetting {
     NSInteger number = self.numberOfSections;
     BOOL show = self.showSectionBackground > 0 && number > 0;
@@ -111,14 +99,12 @@
         }
     }
 }
-
 - (void)layoutSubviews {
     [super layoutSubviews];
     for (UIView *sub in self.sectionBacks) {
         [self insertSubview:sub atIndex:0];
     }
 }
-
 - (NSMutableArray<UIView *> *)sectionBacks {
     if (!_sectionBacks) {
         _sectionBacks = [NSMutableArray array];

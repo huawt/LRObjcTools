@@ -1,9 +1,5 @@
-
-
 #import "LRBaseScrollView.h"
-
 @implementation LRBaseScrollView
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -12,12 +8,10 @@
     }
     return self;
 }
-
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self setUp];
 }
-
 - (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
@@ -25,7 +19,6 @@
     }
     return  self;
 }
-
 - (void)setUp {
     self.backgroundColor = [UIColor clearColor];
     if (@available(iOS 11.0, *)) {
@@ -34,5 +27,6 @@
     self.showsVerticalScrollIndicator = NO;
     self.showsHorizontalScrollIndicator = NO;
     self.contentInset = UIEdgeInsetsZero;
+    self.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
 }
 @end

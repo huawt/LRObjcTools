@@ -1,7 +1,5 @@
-
 #import "LRObjcTools.h"
 #import <WebKit/WebKit.h>
-
 void LRMainAfter(CGFloat time, dispatch_block_t executed) {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         !executed?:executed();

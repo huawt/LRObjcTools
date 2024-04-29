@@ -1,30 +1,23 @@
-
 #import "LRLayoutButton.h"
-
 @implementation LRLayoutButton
-
 - (void)setLayoutTypeValue:(NSInteger)layoutTypeValue {
     _layoutTypeValue = layoutTypeValue;
     self.layoutType = MIN(3, MAX(0, layoutTypeValue));
 }
-
 #if 0
 - (void)setTitle:(NSString *)title forState:(UIControlState)state {
     [super setTitle:title forState:state];
     [self layoutIfNeeded];
 }
-
 - (void)setImage:(UIImage *)image forState:(UIControlState)state {
     [super setImage:image forState:state];
     [self layoutIfNeeded];
 }
 #endif
-
 - (void)layoutSubviews {
     [super layoutSubviews];
     [self layoutStyle];
 }
-
 - (void)layoutStyle {
     [self.imageView sizeToFit];
     [self.titleLabel sizeToFit];
@@ -43,7 +36,6 @@
             break;
     }
 }
-
 - (void)layoutHorizontalLeftView: (UIView *)leftView rightView: (UIView *)rightView spacing: (CGFloat)spacing {
     CGRect leftFrame = leftView.hidden ? CGRectZero : leftView.frame;
     CGRect rightFrame = rightView.hidden ? CGRectZero : rightView.frame;

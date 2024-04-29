@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,7 +32,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="1up-zM-4UO" customClass="LRSlider">
-                                <rect key="frame" x="8" y="120" width="359" height="31"/>
+                                <rect key="frame" x="8" y="70" width="359" height="31"/>
                                 <color key="minimumTrackTintColor" red="0.2196078431372549" green="0.3411764705882353" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="maximumTrackTintColor" red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
@@ -43,16 +44,35 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </slider>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ao0-za-kfQ" customClass="LRPlaceholderTextView">
+                                <rect key="frame" x="20" y="110" width="335" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="DPD-s2-4HW"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" systemColor="systemPinkColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="please enter"/>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1up-zM-4UO" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="10" id="MlN-pO-Sku"/>
                             <constraint firstItem="Iuu-e1-F8v" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" id="OOc-em-SJA"/>
+                            <constraint firstItem="ao0-za-kfQ" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="20" id="Rt4-Bv-D0u"/>
                             <constraint firstItem="Iuu-e1-F8v" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="VGV-R9-N6A"/>
+                            <constraint firstAttribute="trailing" secondItem="ao0-za-kfQ" secondAttribute="trailing" constant="20" id="fAH-2N-WRm"/>
                             <constraint firstItem="Iuu-e1-F8v" firstAttribute="trailing" secondItem="TpU-gO-2f1" secondAttribute="trailingMargin" id="hxA-rR-1OS"/>
+                            <constraint firstItem="ao0-za-kfQ" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="90" id="kYJ-vt-K2y"/>
                             <constraint firstItem="Iuu-e1-F8v" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="l46-Br-LhM"/>
                             <constraint firstAttribute="trailing" secondItem="1up-zM-4UO" secondAttribute="trailing" constant="10" id="p8J-mh-sYJ"/>
-                            <constraint firstItem="1up-zM-4UO" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="100" id="qfg-zW-VBy"/>
+                            <constraint firstItem="1up-zM-4UO" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="50" id="qfg-zW-VBy"/>
                         </constraints>
                     </view>
                     <connections>
@@ -64,4 +84,15 @@
             <point key="canvasLocation" x="304.80000000000001" y="432.23388305847078"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -1,14 +1,10 @@
-
 #import "LRSlider.h"
-
 @interface LRSlider ()
 @property (nonatomic, strong) UIView *currentValueView;
 @property (nonatomic, strong) UIImageView *currentValueImage;
 @property (nonatomic, strong) UILabel *currentValueLabel;
 @end
-
 @implementation LRSlider
-
 - (instancetype)init
 {
     self = [super init];
@@ -36,7 +32,6 @@
     }
     return rect;
 }
-
 - (CGRect)thumbRectForBounds:(CGRect)bounds trackRect:(CGRect)rect value:(float)value {
     CGRect thumbRect = [super thumbRectForBounds:bounds trackRect:rect value:value];
     if (self.showCurrentValue) {
@@ -56,7 +51,6 @@
     }
     return thumbRect;
 }
-
 - (void)setTrackImage:(UIImage *)trackImage {
     _trackImage = trackImage;
     if (trackImage) {
@@ -64,33 +58,28 @@
         [self setThumbImage:trackImage forState:UIControlStateHighlighted];
     }
 }
-
 - (void)setShowCurrentValue:(BOOL)showCurrentValue {
     _showCurrentValue = showCurrentValue;
     self.currentValueView.hidden = !showCurrentValue;
 }
-
 - (void)setCurrentValueFont:(UIFont *)currentValueFont {
     _currentValueFont = currentValueFont;
     if (currentValueFont) {
         self.currentValueLabel.font = currentValueFont;
     }
 }
-
 - (void)setCurrentValueColor:(UIColor *)currentValueColor {
     _currentValueColor = currentValueColor;
     if (currentValueColor) {
         self.currentValueLabel.textColor = currentValueColor;
     }
 }
-
 - (void)setCurrentValueBackgroundImage:(UIImage *)currentValueBackgroundImage {
     _currentValueBackgroundImage = currentValueBackgroundImage;
     if (currentValueBackgroundImage) {
         self.currentValueImage.image = currentValueBackgroundImage;
     }
 }
-
 - (UIView *)currentValueView {
     if (!_currentValueView) {
         _currentValueView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 58, 26)];
@@ -101,7 +90,6 @@
     }
     return _currentValueView;
 }
-
 - (UIImageView *)currentValueImage {
     if (!_currentValueImage) {
         _currentValueImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 58, 26)];
@@ -118,5 +106,4 @@
     }
     return _currentValueLabel;
 }
-
 @end

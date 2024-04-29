@@ -1,12 +1,7 @@
-
 #import "LRImageTool.h"
-
 @implementation LRImage
-
 @end
-
 @implementation LRImageTool
-
 + (LRImage *)compress:(UIImage *)image {
     CGSize targetSize = [self fixImageSize:image.size];
     if (CGSizeEqualToSize(targetSize, CGSizeZero)){
@@ -27,25 +22,20 @@
         model.base64 = base64Str;
         return model;
     }
-    
     if (size > 8 && size < 20) {
         image = [self resizeImage:image targetSize: CGSizeMake(image.size.width/2, image.size.height/2)];
     }else if (size >= 20) {
         image = [self resizeImage:image targetSize: CGSizeMake(image.size.width/4, image.size.height/4)];
     }
     data = UIImageJPEGRepresentation(image, [self compressFactor:size]);
-    
     NSString *base64Str = [data base64EncodedStringWithOptions:0];
     image = [UIImage imageWithData:data];
-    
     LRImage * model = [LRImage new];
     model.data = data;
     model.image = image;
     model.base64 = base64Str;
-    
     return model;
 }
-
 + (CGSize)fixImageSize:(CGSize)originalSize{
     CGFloat imageW = originalSize.width;
     CGFloat imageH = originalSize.height;
@@ -91,13 +81,10 @@
     UIGraphicsEndImageContext();
     return newImage;
 }
-
 + (CGFloat)compressFactor:(CGFloat)size{
     if (size < 0.9){
         return 1;
     }
     return 0.9 / size;
 }
-
 @end
-

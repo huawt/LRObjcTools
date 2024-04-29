@@ -1,8 +1,6 @@
-
 #import "NSObject+Extension.h"
 #import "NSObject+Swizzle.h"
 #import <objc/runtime.h>
-
 @implementation UILabel (Extension)
 + (instancetype)labelText:(NSString *)text font:(UIFont *)font color:(UIColor *)color align:(NSTextAlignment)alignment lines:(CGFloat)lines {
     UILabel *label = [UILabel new];
@@ -15,8 +13,6 @@
     return label;
 }
 @end
-
-
 @implementation NSString (Extension)
 - (NSString *)currencyGrouped {
     if (self.integerValue < 1000) { return self; }
@@ -82,18 +78,14 @@
 + (NSString *)fixEmptyString: (NSString *)aString {
     return [aString isValid] ? aString : @"-";
 }
-
 - (UIImage *)makeImage {
     return [UIImage imageNamed:self];
 }
-
 - (UIColor *)makeColor {
     return [UIColor hexStringColor:self] ;
 }
 @end
-
 @implementation UIColor (Extension)
-
 + (instancetype)hexStringColor:(NSString *)hexStr {
     CGFloat r, g, b, a;
     if (lrHexStrToRGBA(hexStr, &r, &g, &b, &a)) {
@@ -114,14 +106,10 @@ static BOOL lrHexStrToRGBA(NSString *str,
     } else if ([str hasPrefix:@"0X"]) {
         str = [str substringFromIndex:2];
     }
-    
     NSUInteger length = [str length];
-    //         RGB            RGBA          RRGGBB        RRGGBBAA
     if (length != 3 && length != 4 && length != 6 && length != 8) {
         return NO;
     }
-    
-    //RGB,RGBA,RRGGBB,RRGGBBAA
     if (length < 5) {
         *r = lrHexStrToInt([str substringWithRange:NSMakeRange(0, 1)]) / 255.0f;
         *g = lrHexStrToInt([str substringWithRange:NSMakeRange(1, 1)]) / 255.0f;
@@ -137,9 +125,7 @@ static BOOL lrHexStrToRGBA(NSString *str,
     }
     return YES;
 }
-
 @end
-
 @implementation UITextField (Extension)
 - (void)fixOnlyNumber {
     NSCharacterSet *set = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
@@ -147,17 +133,12 @@ static BOOL lrHexStrToRGBA(NSString *str,
     self.text = [array componentsJoinedByString:@""];
 }
 @end
-
-
 @implementation UIImageView (Extension)
 + (UIImageView *)imageViewByImage: (NSString *)imageName {
     return  [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
 }
 @end
-
-
 @implementation UIAlertController (Extension)
-
 + (UIAlertController *)sheetWithTitles:(NSArray *)titles handler:(void (^)(NSInteger))handler {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     for (NSInteger index = 0; index < titles.count; index++) {
@@ -168,14 +149,11 @@ static BOOL lrHexStrToRGBA(NSString *str,
         [alert addAction:action];
     }
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
     }];
     [alert addAction:action];
     return  alert;
 }
-
 @end
-
 static NSArray *LRControlDelayClasses;
 @implementation UIControl (TimeDelay)
 + (void)load {
@@ -226,12 +204,10 @@ static NSArray *LRControlDelayClasses;
 - (void)setLimitEventTime:(NSTimeInterval)limitEventTime{
     objc_setAssociatedObject(self, "TimeDelay_limitEventTime", @(limitEventTime), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
 + (void)registerDelayClass:(NSArray *)classNames {
     LRControlDelayClasses = classNames;
 }
 @end
-
 @implementation UIButton (Extension)
 - (void)beEnabled {
     self.userInteractionEnabled = YES;
@@ -240,104 +216,83 @@ static NSArray *LRControlDelayClasses;
     self.userInteractionEnabled = NO;
 }
 @end
-
 @implementation UIApplication (Extension)
 - (NSString *)appDisplayName {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
 }
 @end
-
 @implementation UIView (Extension)
 - (CGFloat)left {
     return self.frame.origin.x;
 }
-
 - (void)setLeft:(CGFloat)x {
     CGRect frame = self.frame;
     frame.origin.x = x;
     self.frame = frame;
 }
-
 - (CGFloat)top {
     return self.frame.origin.y;
 }
-
 - (void)setTop:(CGFloat)y {
     CGRect frame = self.frame;
     frame.origin.y = y;
     self.frame = frame;
 }
-
 - (CGFloat)right {
     return self.frame.origin.x + self.frame.size.width;
 }
-
 - (void)setRight:(CGFloat)right {
     CGRect frame = self.frame;
     frame.origin.x = right - frame.size.width;
     self.frame = frame;
 }
-
 - (CGFloat)bottom {
     return self.frame.origin.y + self.frame.size.height;
 }
-
 - (void)setBottom:(CGFloat)bottom {
     CGRect frame = self.frame;
     frame.origin.y = bottom - frame.size.height;
     self.frame = frame;
 }
-
 - (CGFloat)width {
     return self.frame.size.width;
 }
-
 - (void)setWidth:(CGFloat)width {
     CGRect frame = self.frame;
     frame.size.width = width;
     self.frame = frame;
 }
-
 - (CGFloat)height {
     return self.frame.size.height;
 }
-
 - (void)setHeight:(CGFloat)height {
     CGRect frame = self.frame;
     frame.size.height = height;
     self.frame = frame;
 }
-
 - (CGFloat)centerX {
     return self.center.x;
 }
-
 - (void)setCenterX:(CGFloat)centerX {
     self.center = CGPointMake(centerX, self.center.y);
 }
-
 - (CGFloat)centerY {
     return self.center.y;
 }
-
 - (void)setCenterY:(CGFloat)centerY {
     self.center = CGPointMake(self.center.x, centerY);
 }
-
 - (CGPoint)origin {
     return self.frame.origin;
 }
-
 - (void)setOrigin:(CGPoint)origin {
     CGRect frame = self.frame;
     frame.origin = origin;
     self.frame = frame;
 }
-
 - (CGSize)size {
     return self.frame.size;
 }
-
 - (void)setSize:(CGSize)size {
     CGRect frame = self.frame;
     frame.size = size;
@@ -361,7 +316,6 @@ static NSArray *LRControlDelayClasses;
     [self.layer insertSublayer:shapeLayer atIndex:0];
 }
 @end
-
 @implementation CALayer (Extension)
 + (void)load {
     static dispatch_once_t onceToken;
@@ -377,5 +331,4 @@ static NSArray *LRControlDelayClasses;
     }
     [self displayLR];
 }
-
 @end
