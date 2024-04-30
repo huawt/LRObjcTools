@@ -11,5 +11,6 @@ typedef NS_ENUM(NSUInteger, LRLayoutButtonType) {
 @property (nonatomic, assign) LRLayoutButtonType layoutType;
 @property (nonatomic, assign) IBInspectable NSInteger layoutTypeValue;
 @property (nonatomic, assign) IBInspectable CGFloat spacing;
+- (void)timeCountDown: (NSInteger)second display: (NSString *)title;
 @end
 NS_ASSUME_NONNULL_END

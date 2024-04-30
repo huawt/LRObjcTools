@@ -1,19 +1,46 @@
 #import "LRLayoutButton.h"
+#import "NSObject+Extension.h"
+@interface LRLayoutButton ()
+@property (nonatomic, copy) NSString *storedTitle;
+@property (nonatomic, assign) NSInteger second;
+@property (nonatomic, strong) NSTimer *timer;
+@end
 @implementation LRLayoutButton
 - (void)setLayoutTypeValue:(NSInteger)layoutTypeValue {
     _layoutTypeValue = layoutTypeValue;
     self.layoutType = MIN(3, MAX(0, layoutTypeValue));
 }
-#if 0
-- (void)setTitle:(NSString *)title forState:(UIControlState)state {
-    [super setTitle:title forState:state];
-    [self layoutIfNeeded];
+- (void)timeCountDown:(NSInteger)second display:(NSString *)title {
+    if (second <= 0) {
+        self.enabled = YES;
+    } else {
+        self.second = second;
+        if ([NSString isValid:title]) {
+            self.storedTitle = title;
+        } else {
+            self.storedTitle = self.currentTitle;
+        }
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(changeSecond) userInfo:nil repeats:YES];
+        [self.timer fire];
+    }
 }
-- (void)setImage:(UIImage *)image forState:(UIControlState)state {
-    [super setImage:image forState:state];
-    [self layoutIfNeeded];
+- (void)changeSecond {
+    if (self.second <= 1) {
+        [self.timer invalidate];
+        self.timer = nil;
+        [self displayTitle:self.storedTitle];
+        self.enabled = YES;
+    } else {
+        self.enabled = NO;
+        self.second -= 1;
+        [self displayTitle:[NSString stringWithFormat:@"%@s", @(self.second)]];
+    }
 }
-#endif
+- (void)displayTitle: (NSString *)title {
+    [self setTitle:title forState:UIControlStateNormal];
+    [self setTitle:title forState:UIControlStateHighlighted];
+    [self setTitle:title forState:UIControlStateDisabled];
+}
 - (void)layoutSubviews {
     [super layoutSubviews];
     [self layoutStyle];
