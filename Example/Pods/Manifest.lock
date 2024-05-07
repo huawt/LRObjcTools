@@ -1,5 +1,5 @@
 PODS:
-  - LRObjcTools (0.1.4)
+  - LRObjcTools (0.1.5)
 
 DEPENDENCIES:
   - LRObjcTools (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LRObjcTools: 0516676fa8a4b9368acd2eb157f8ec412cddec2f
+  LRObjcTools: 53ee772801cf48df027f4536e3944afe29c230a9
 
 PODFILE CHECKSUM: 53eaa890c3f48c1b0feaac9e4246a5f235ffdc89
 

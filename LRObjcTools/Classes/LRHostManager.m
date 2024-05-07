@@ -24,7 +24,7 @@
     return self;
 }
 - (void)loadHost {
-    NSString *host = [[NSUserDefaults standardUserDefaults] objectForKey:[LRHostManager shared].hostKey];
+    NSString *host = [[NSUserDefaults standardUserDefaults] objectForKey:self.hostKey];
     if ([host isValid]) {
         self.validHost = host;
     }
