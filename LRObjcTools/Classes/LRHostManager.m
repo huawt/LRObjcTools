@@ -64,7 +64,7 @@
 - (void)setValidHost:(NSString *)validHost {
     _validHost = validHost;
     if ([validHost isValid]) {
-        [[NSUserDefaults standardUserDefaults] setObject:validHost forKey:[LRHostManager shared].hostKey];
+        [[NSUserDefaults standardUserDefaults] setObject:validHost forKey:self.hostKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
