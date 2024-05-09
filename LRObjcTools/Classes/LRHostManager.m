@@ -46,8 +46,8 @@
     }
     NSString *old = [LRHostManager shared].validHost;
     if ([currentUrl containsString:old] || [old isEmpty]) {
-        [LRHostManager shared].retryTimes += 1;
         NSString *new = [[LRHostManager shared].hosts objectAtIndex:([LRHostManager shared].retryTimes % [LRHostManager shared].hosts.count)];
+        [LRHostManager shared].retryTimes += 1;
         if ([new isEmpty]) {
             [LRHostManager checkHost:currentUrl completion:completion];
         } else {
