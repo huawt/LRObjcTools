@@ -71,7 +71,7 @@
     switch (self.contentHorizontalAlignment) {
         case UIControlContentHorizontalAlignmentLeft:
         case UIControlContentHorizontalAlignmentLeading:
-            leftFrame.origin.x = 0;
+            leftFrame.origin.x = self.contentEdgeInsets.left;
             rightFrame.origin.x = CGRectGetMaxX(leftFrame) + space;
             break;
         case UIControlContentHorizontalAlignmentCenter:
@@ -81,14 +81,14 @@
             break;
         case UIControlContentHorizontalAlignmentRight:
         case UIControlContentHorizontalAlignmentTrailing:
-            rightFrame.origin.x = self.bounds.size.width - rightFrame.size.width;
+            rightFrame.origin.x = self.bounds.size.width - rightFrame.size.width - self.contentEdgeInsets.right;
             leftFrame.origin.x = CGRectGetMinX(rightFrame) - space - leftFrame.size.width;
             break;
     }
     switch (self.contentVerticalAlignment) {
         case UIControlContentVerticalAlignmentTop:
-            leftFrame.origin.y = 0;
-            rightFrame.origin.y = 0;
+            leftFrame.origin.y = self.contentEdgeInsets.top;
+            rightFrame.origin.y = self.contentEdgeInsets.top;
             break;
         case UIControlContentVerticalAlignmentCenter:
         case UIControlContentVerticalAlignmentFill:
@@ -96,8 +96,8 @@
             rightFrame.origin.y = (self.bounds.size.height - rightFrame.size.height) / 2.0;
             break;
         case UIControlContentVerticalAlignmentBottom:
-            leftFrame.origin.y = (self.bounds.size.height - leftFrame.size.height);
-            rightFrame.origin.y = (self.bounds.size.height - rightFrame.size.height);
+            leftFrame.origin.y = (self.bounds.size.height - leftFrame.size.height) - self.contentEdgeInsets.bottom;
+            rightFrame.origin.y = (self.bounds.size.height - rightFrame.size.height) - self.contentEdgeInsets.bottom;
             break;
     }
     leftView.frame = leftFrame;
@@ -111,8 +111,8 @@
     switch (self.contentHorizontalAlignment) {
         case UIControlContentHorizontalAlignmentLeft:
         case UIControlContentHorizontalAlignmentLeading:
-            upFrame.origin.x = 0;
-            downFrame.origin.x = 0;
+            upFrame.origin.x = self.contentEdgeInsets.left;
+            downFrame.origin.x = self.contentEdgeInsets.left;
             break;
         case UIControlContentHorizontalAlignmentCenter:
         case UIControlContentHorizontalAlignmentFill:
@@ -121,13 +121,13 @@
             break;
         case UIControlContentHorizontalAlignmentRight:
         case UIControlContentHorizontalAlignmentTrailing:
-            upFrame.origin.x = self.bounds.size.width - upFrame.size.width;
-            downFrame.origin.x =self.bounds.size.width - downFrame.size.width;
+            upFrame.origin.x = self.bounds.size.width - upFrame.size.width - self.contentEdgeInsets.right;
+            downFrame.origin.x =self.bounds.size.width - downFrame.size.width - self.contentEdgeInsets.right;
             break;
     }
     switch (self.contentVerticalAlignment) {
         case UIControlContentVerticalAlignmentTop:
-            upFrame.origin.y = 0;
+            upFrame.origin.y = self.contentEdgeInsets.top;
             downFrame.origin.y = CGRectGetMaxY(upFrame) + space;
             break;
         case UIControlContentVerticalAlignmentCenter:
@@ -136,7 +136,7 @@
             downFrame.origin.y = CGRectGetMaxY(upFrame) + space;
             break;
         case UIControlContentVerticalAlignmentBottom:
-            downFrame.origin.y = (self.bounds.size.height - downFrame.size.height);
+            downFrame.origin.y = (self.bounds.size.height - downFrame.size.height) - self.contentEdgeInsets.bottom;
             upFrame.origin.y = CGRectGetMinY(downFrame) - space - upFrame.size.height;
             break;
     }

@@ -298,6 +298,12 @@ static NSArray *LRControlDelayClasses;
     frame.size = size;
     self.frame = frame;
 }
+- (void)setDisplay:(BOOL)display {
+    self.hidden = !display;
+}
+- (BOOL)isDisplay {
+    return !self.hidden;
+}
 - (void)dashedLine: (UIColor *)color thickness: (CGFloat)thickness spacing: (CGFloat)spacing length: (CGFloat)length {
     while (self.layer.sublayers.count) {
         [self.layer.sublayers.lastObject removeFromSuperlayer];
