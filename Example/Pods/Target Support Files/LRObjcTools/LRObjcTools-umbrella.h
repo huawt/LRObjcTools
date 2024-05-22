@@ -26,6 +26,7 @@
 #import "LRLayoutButton.h"
 #import "LRObjcTools.h"
 #import "LRPlaceholderTextView.h"
+#import "LRSize.h"
 #import "LRSlider.h"
 #import "LRStepSlider.h"
 #import "NSObject+Extension.h"
