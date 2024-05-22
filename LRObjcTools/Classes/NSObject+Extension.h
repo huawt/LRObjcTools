@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGFloat centerY;
 @property (nonatomic) CGPoint origin;
 @property (nonatomic) CGSize  size;
-@property (nonatomic, getter = isDisplay) BOOL  display;
+@property (nonatomic, getter = isDisplayed) BOOL  displayed;
 - (void)dashedLine: (UIColor *)color thickness: (CGFloat)thickness spacing: (CGFloat)spacing length: (CGFloat)length;
 @end
 @interface UILabel (Extension)

@@ -60,6 +60,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="please enter"/>
                                 </userDefinedRuntimeAttributes>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test-testtest-testtest-testtest-testtest-testtest-testtest-testtest-testtest-test" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g07-bh-pOf">
+                                <rect key="frame" x="116" y="220" width="143" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -69,10 +75,13 @@
                             <constraint firstItem="Iuu-e1-F8v" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="VGV-R9-N6A"/>
                             <constraint firstAttribute="trailing" secondItem="ao0-za-kfQ" secondAttribute="trailing" constant="20" id="fAH-2N-WRm"/>
                             <constraint firstItem="Iuu-e1-F8v" firstAttribute="trailing" secondItem="TpU-gO-2f1" secondAttribute="trailingMargin" id="hxA-rR-1OS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g07-bh-pOf" secondAttribute="trailing" constant="100" id="i0M-Sd-XLb"/>
                             <constraint firstItem="ao0-za-kfQ" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="90" id="kYJ-vt-K2y"/>
                             <constraint firstItem="Iuu-e1-F8v" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="l46-Br-LhM"/>
+                            <constraint firstItem="g07-bh-pOf" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="100" id="p5a-US-qpy"/>
                             <constraint firstAttribute="trailing" secondItem="1up-zM-4UO" secondAttribute="trailing" constant="10" id="p8J-mh-sYJ"/>
                             <constraint firstItem="1up-zM-4UO" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="50" id="qfg-zW-VBy"/>
+                            <constraint firstItem="g07-bh-pOf" firstAttribute="top" secondItem="1up-zM-4UO" secondAttribute="bottom" constant="120" id="sB6-QV-i9L"/>
                         </constraints>
                     </view>
                     <connections>
@@ -92,7 +101,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

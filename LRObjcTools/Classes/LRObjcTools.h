@@ -21,6 +21,7 @@ FOUNDATION_EXPORT const unsigned char LRObjcToolsVersionString[];
 #import <LRObjcTools/LRImagePicker.h>
 #import <LRObjcTools/LRImageTool.h>
 #import <LRObjcTools/LRHostManager.h>
+#import <LRObjcTools/LRSize.h>
 #else
 #import "LRBaseTableView.h"
 #import "LRBaseScrollView.h"
@@ -41,9 +42,16 @@ FOUNDATION_EXPORT const unsigned char LRObjcToolsVersionString[];
 #import "LRImagePicker.h"
 #import "LRImageTool.h"
 #import "LRHostManager.h"
+#import "LRSize.h"
 #endif /* __has_include */
 void LRMainAfter(CGFloat time, dispatch_block_t executed);
 void LRMainQueue(dispatch_block_t executed);
+#ifdef DEBUG
+#define LRDLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#define LRDLog(...)
+#endif
+
 @interface LRObjcTools : NSObject
 + (void)clearWebViewCache;
 @end

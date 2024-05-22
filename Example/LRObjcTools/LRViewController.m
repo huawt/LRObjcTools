@@ -17,6 +17,10 @@
     button.frame = CGRectMake(100, 400, 100, 50);
     [button timeCountDown:10 display:@"resend"];
     [self.view addSubview:button];
+    
+    UILabel *label = [UILabel new];
+    UILabel *label2 = [[UILabel alloc] initWithFrame: CGRectZero];
+    
 }
 - (void)didReceiveMemoryWarning
 {

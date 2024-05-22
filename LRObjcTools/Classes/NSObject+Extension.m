@@ -2,6 +2,37 @@
 #import "NSObject+Swizzle.h"
 #import <objc/runtime.h>
 @implementation UILabel (Extension)
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        SEL sysInitSEL = @selector(init);
+        SEL customInitSEL = @selector(initLR);
+        [self instanceSwizzleSelector:customInitSEL originalSelector:sysInitSEL];
+        SEL sysFrameSEL = @selector(initWithFrame:);
+        SEL customFrameSEL = @selector(initWithFrameLR:);
+        [self instanceSwizzleSelector:customFrameSEL originalSelector:sysFrameSEL];
+        SEL sysNibSEL = @selector(awakeFromNib);
+        SEL customNibSEL = @selector(awakeFromNibLR);
+        [self instanceSwizzleSelector:customNibSEL originalSelector:sysNibSEL];
+    });
+}
+- (instancetype)initLR {
+    UILabel *label = [self initLR];
+    label.adjustsFontSizeToFitWidth = true;
+    label.minimumScaleFactor = 0.5;
+    return label;
+}
+- (instancetype)initWithFrameLR:(CGRect)frame {
+    UILabel *label = [self initWithFrameLR:frame];
+    label.adjustsFontSizeToFitWidth = true;
+    label.minimumScaleFactor = 0.5;
+    return label;
+}
+- (void)awakeFromNibLR {
+    [self awakeFromNibLR];
+    self.adjustsFontSizeToFitWidth = true;
+    self.minimumScaleFactor = 0.5;
+}
 + (instancetype)labelText:(NSString *)text font:(UIFont *)font color:(UIColor *)color align:(NSTextAlignment)alignment lines:(CGFloat)lines {
     UILabel *label = [UILabel new];
     label.text = text;
@@ -298,10 +329,10 @@ static NSArray *LRControlDelayClasses;
     frame.size = size;
     self.frame = frame;
 }
-- (void)setDisplay:(BOOL)display {
-    self.hidden = !display;
+- (void)setDisplayed:(BOOL)displayed {
+    self.hidden = !displayed;
 }
-- (BOOL)isDisplay {
+- (BOOL)isDisplayed {
     return !self.hidden;
 }
 - (void)dashedLine: (UIColor *)color thickness: (CGFloat)thickness spacing: (CGFloat)spacing length: (CGFloat)length {
