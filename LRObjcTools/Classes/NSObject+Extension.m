@@ -51,6 +51,12 @@
     form.numberStyle = NSNumberFormatterDecimalStyle;
     form.groupingSeparator = @",";
     form.decimalSeparator = @".";
+    form.maximumFractionDigits = 2;
+    form.groupingSize = 3;
+    form.minimumFractionDigits = 0;
+    if ([self hasSuffix:@".00"]) {
+        form.minimumFractionDigits = 2;
+    }
     NSNumber *number = [form numberFromString:self];
     if (number) {
         NSString *str = [form stringFromNumber:number];
@@ -245,6 +251,11 @@ static NSArray *LRControlDelayClasses;
 }
 - (void)beDisabled {
     self.userInteractionEnabled = NO;
+    __weak typeof(self) ws = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        __weak typeof(self) ss = ws;
+        [ss beEnabled];
+    });
 }
 @end
 @implementation UIApplication (Extension)
