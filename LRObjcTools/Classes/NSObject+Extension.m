@@ -285,6 +285,37 @@ static NSArray *LRControlDelayClasses;
 }
 @end
 @implementation UIView (Extension)
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        SEL sysSEL = @selector(layoutSubviews);
+        SEL customSEL = @selector(layoutSubviewsLR);
+        [self instanceSwizzleSelector:customSEL originalSelector:sysSEL];
+    });
+}
+- (void)layoutSubviewsLR {
+    [self layoutSubviewsLR];
+    if (CGPointEqualToPoint(self.topCorners, CGPointZero) && CGPointEqualToPoint(self.bottomCorners, CGPointZero)) {
+        self.layer.mask = nil;
+        return;
+    }
+    CGRect rect = self.bounds;
+    CGFloat maxX = rect.size.width;
+    CGFloat maxY = rect.size.height;
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path moveToPoint:CGPointMake(0, self.topCorners.x)];
+    [path addQuadCurveToPoint:CGPointMake(self.topCorners.x, 0) controlPoint:CGPointZero];
+    [path addLineToPoint:CGPointMake(maxX - self.topCorners.y, 0)];
+    [path addQuadCurveToPoint:CGPointMake(maxX, self.topCorners.y) controlPoint:CGPointMake(maxX, 0)];
+    [path addLineToPoint:CGPointMake(maxX, maxY - self.bottomCorners.y)];
+    [path addQuadCurveToPoint:CGPointMake(maxX - self.bottomCorners.y, maxY) controlPoint:CGPointMake(maxX, maxY)];
+    [path addLineToPoint:CGPointMake(self.bottomCorners.x, maxY)];
+    [path addQuadCurveToPoint:CGPointMake(0, maxY - self.bottomCorners.x) controlPoint:CGPointMake(0, maxY)];
+    [path closePath];
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.path = path.CGPath;
+    self.layer.mask = shapeLayer;
+}
 - (CGFloat)left {
     return self.frame.origin.x;
 }
@@ -366,6 +397,26 @@ static NSArray *LRControlDelayClasses;
 }
 - (BOOL)isDisplayed {
     return !self.hidden;
+}
+- (void)setTopCorners:(CGPoint)topCorners {
+    objc_setAssociatedObject(self, "UIViewCustomTopCorners", [NSValue valueWithCGPoint:topCorners], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (CGPoint)topCorners {
+    NSValue *value = objc_getAssociatedObject(self, "UIViewCustomTopCorners");
+    if (value) {
+        return [value CGPointValue];
+    }
+    return CGPointZero;
+}
+- (void)setBottomCorners:(CGPoint)bottomCorners {
+    objc_setAssociatedObject(self, "UIViewCustomBottomCorners", [NSValue valueWithCGPoint:bottomCorners], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (CGPoint)bottomCorners {
+    NSValue *value = objc_getAssociatedObject(self, "UIViewCustomBottomCorners");
+    if (value) {
+        return [value CGPointValue];
+    }
+    return CGPointZero;
 }
 - (void)dashedLine: (UIColor *)color thickness: (CGFloat)thickness spacing: (CGFloat)spacing length: (CGFloat)length {
     while (self.layer.sublayers.count) {

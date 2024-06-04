@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGPoint origin;
 @property (nonatomic) CGSize  size;
 @property (nonatomic, getter = isDisplayed) BOOL  displayed;
+@property (nonatomic, assign) IBInspectable CGPoint topCorners;
+@property (nonatomic, assign) IBInspectable CGPoint bottomCorners;
 - (void)dashedLine: (UIColor *)color thickness: (CGFloat)thickness spacing: (CGFloat)spacing length: (CGFloat)length;
 @end
 @interface UILabel (Extension)

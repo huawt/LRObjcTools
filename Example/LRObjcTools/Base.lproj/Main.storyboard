@@ -66,9 +66,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JhZ-ep-B6d">
+                                <rect key="frame" x="67" y="455" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iea-yU-OjI">
+                                        <rect key="frame" x="99" y="54" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="9vX-zl-FSb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="topCorners">
+                                        <point key="value" x="30" y="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="bottomCorners">
+                                        <point key="value" x="50" y="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="JhZ-ep-B6d" secondAttribute="bottom" constant="84" id="66J-ao-S2p"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JhZ-ep-B6d" secondAttribute="trailing" constant="52" id="MII-aS-aGx"/>
                             <constraint firstItem="1up-zM-4UO" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="10" id="MlN-pO-Sku"/>
                             <constraint firstItem="Iuu-e1-F8v" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" id="OOc-em-SJA"/>
                             <constraint firstItem="ao0-za-kfQ" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="20" id="Rt4-Bv-D0u"/>
@@ -82,6 +108,7 @@
                             <constraint firstAttribute="trailing" secondItem="1up-zM-4UO" secondAttribute="trailing" constant="10" id="p8J-mh-sYJ"/>
                             <constraint firstItem="1up-zM-4UO" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="50" id="qfg-zW-VBy"/>
                             <constraint firstItem="g07-bh-pOf" firstAttribute="top" secondItem="1up-zM-4UO" secondAttribute="bottom" constant="120" id="sB6-QV-i9L"/>
+                            <constraint firstItem="JhZ-ep-B6d" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="51" id="sIf-S3-c9e"/>
                         </constraints>
                     </view>
                     <connections>
