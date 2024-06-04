@@ -1,7 +1,5 @@
-
 #import "LRSize.h"
 #import <UIKit/UIKit.h>
-
 CGFloat kStatusBarHeight = 20.0f;
 CGFloat kNavigationBarHeight = 44.0f;
 CGFloat kTabBarOffset = 0;
@@ -11,9 +9,7 @@ CGFloat kFinalTopHeight = (20.0f + 44.0f);
 CGFloat kUIWidth = 0.0f;
 CGFloat kUIHeight = 0.0f;
 BOOL kIsIPhoneX = NO;
-
 @implementation LRSize
-
 + (void)configureUISize
 {
     kIsIPhoneX = [self judgeIsIPhoneX];
@@ -35,7 +31,6 @@ BOOL kIsIPhoneX = NO;
     kUIWidth = [UIScreen mainScreen].bounds.size.width;
     kUIHeight = [UIScreen mainScreen].bounds.size.height;
 }
-
 UIWindow *AppWindow(void) {
     if (@available(iOS 16.0, *)) {
         UIWindowScene *scene = [UIApplication sharedApplication].connectedScenes.anyObject;
@@ -51,7 +46,6 @@ UIWindow *AppWindow(void) {
     }
     return [UIApplication sharedApplication].keyWindow;
 }
-
 + (BOOL)judgeIsIPhoneX
 {
     if (@available(iOS 11.0, *)) {
@@ -60,7 +54,6 @@ UIWindow *AppWindow(void) {
         return NO;
     }
 }
-
 BOOL kIsiPhone(void){
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         return YES;
@@ -73,14 +66,12 @@ BOOL kIsiPad(void){
     }
     return NO;
 }
-
 BOOL IsIPhoneX(void){
     if (@available(iOS 11.0, *)) {
         return  AppWindow().safeAreaInsets.top > 0 || AppWindow().safeAreaInsets.bottom > 0;
     }
     return NO;
 }
-
 UIImage *ReSizeImage(UIImage *image, CGSize size)
 {
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
@@ -89,5 +80,4 @@ UIImage *ReSizeImage(UIImage *image, CGSize size)
     UIGraphicsEndImageContext();
     return newImage;
 }
-
 @end

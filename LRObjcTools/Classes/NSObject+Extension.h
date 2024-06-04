@@ -42,6 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 @interface UIAlertController (Extension)
 + (UIAlertController *)sheetWithTitles: (NSArray *)titles handler: (void(^)(NSInteger index))handler;
++ (UIAlertController *)sheetWithTitles: (NSArray *)titles cancel: (NSString *)cancel handler: (void(^)(NSInteger index))handler;
 @end
 @interface UIControl (TimeDelay)
 @property (nonatomic, assign) NSTimeInterval eventInterval;
@@ -53,6 +54,10 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 @interface UIApplication (Extension)
 @property (nonatomic, copy, readonly) NSString *appDisplayName;
+@property (copy, nonatomic, readonly) NSString *appBundleName;
+@property (copy, nonatomic, readonly) NSString *appBundleIdentifier;
+@property (copy, nonatomic, readonly) NSString *appShortVersion;
+@property (copy, nonatomic, readonly) NSString *appBuildVersion;
 @end
 @interface CALayer (Extension)
 @end

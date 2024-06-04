@@ -177,6 +177,9 @@ static BOOL lrHexStrToRGBA(NSString *str,
 @end
 @implementation UIAlertController (Extension)
 + (UIAlertController *)sheetWithTitles:(NSArray *)titles handler:(void (^)(NSInteger))handler {
+    return  [UIAlertController sheetWithTitles:titles cancel:@"Cancel" handler:handler];
+}
++ (UIAlertController *)sheetWithTitles:(NSArray *)titles cancel:(NSString *)cancel handler:(void (^)(NSInteger))handler {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     for (NSInteger index = 0; index < titles.count; index++) {
         NSString *title = titles[index];
@@ -185,7 +188,8 @@ static BOOL lrHexStrToRGBA(NSString *str,
         }];
         [alert addAction:action];
     }
-    UIAlertAction *action = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    NSString *cancelText = [cancel isValid] ? cancel : @"Cancel";
+    UIAlertAction *action = [UIAlertAction actionWithTitle:cancelText style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
     }];
     [alert addAction:action];
     return  alert;
@@ -260,7 +264,24 @@ static NSArray *LRControlDelayClasses;
 @end
 @implementation UIApplication (Extension)
 - (NSString *)appDisplayName {
-    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+    NSString *text = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+    return [text isValid] ? text : @"";
+}
+- (NSString *)appBundleName {
+    NSString *text = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
+    return [text isValid] ? text : @"";
+}
+- (NSString *)appBundleIdentifier {
+    NSString *text = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
+    return [text isValid] ? text : @"";
+}
+- (NSString *)appShortVersion {
+    NSString *text = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    return [text isValid] ? text : @"";
+}
+- (NSString *)appBuildVersion {
+    NSString *text = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+    return [text isValid] ? text : @"";;
 }
 @end
 @implementation UIView (Extension)

@@ -51,7 +51,6 @@ void LRMainQueue(dispatch_block_t executed);
 #else
 #define LRDLog(...)
 #endif
-
 @interface LRObjcTools : NSObject
 + (void)clearWebViewCache;
 @end

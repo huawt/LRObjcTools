@@ -9,8 +9,5 @@
 #endif
 #endif
 #endif
-
-
 FOUNDATION_EXPORT double Pods_LRObjcTools_ExampleVersionNumber;
 FOUNDATION_EXPORT const unsigned char Pods_LRObjcTools_ExampleVersionString[];
-
