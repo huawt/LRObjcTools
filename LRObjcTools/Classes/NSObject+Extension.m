@@ -295,10 +295,7 @@ static NSArray *LRControlDelayClasses;
 }
 - (void)layoutSubviewsLR {
     [self layoutSubviewsLR];
-    if (CGPointEqualToPoint(self.topCorners, CGPointZero) && CGPointEqualToPoint(self.bottomCorners, CGPointZero)) {
-        self.layer.mask = nil;
-        return;
-    }
+    if (CGPointEqualToPoint(self.topCorners, CGPointZero) && CGPointEqualToPoint(self.bottomCorners, CGPointZero)) { return; }
     CGRect rect = self.bounds;
     CGFloat maxX = rect.size.width;
     CGFloat maxY = rect.size.height;
@@ -434,6 +431,59 @@ static NSArray *LRControlDelayClasses;
     shapeLayer.path = path;
     CGPathRelease(path);
     [self.layer insertSublayer:shapeLayer atIndex:0];
+}
+- (void)createTagsViewWithTags: (NSArray<NSString *> *)tags attributes: (NSDictionary<NSAttributedStringKey, id> *)attributes insets:(CGFloat)insets lineHeight: (CGFloat)lineHeight lineSpace: (CGFloat)lineSpace itemSpace: (CGFloat)itemSpace cornerRadius: (CGFloat)radius maxWidth: (CGFloat)maxWidth {
+    if (tags.count > 0) {
+        CGFloat maxHeight = 0;
+        CGFloat originX = 0;
+        CGFloat originY = 0;
+        CGFloat minWidth = 12;
+        CGFloat textHeight = [@" " boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingTruncatesLastVisibleLine) attributes:attributes context:nil].size.height;
+        for (NSString *tag in tags) {
+            UIFont *font = attributes[NSFontAttributeName];
+            if (font) {
+                minWidth = font.pointSize;
+            }
+            UIButton *button = [UIButton buttonWithType:0];
+            button.userInteractionEnabled = NO;
+            button.backgroundColor = attributes[NSBackgroundColorAttributeName];
+            [button setTitle:tag forState:0];
+            [button setTitleColor:attributes[NSForegroundColorAttributeName] forState:0];
+            button.titleLabel.font = font;
+            button.titleLabel.numberOfLines = 0;
+            button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            button.layer.borderColor = [attributes[NSStrokeColorAttributeName] CGColor];
+            button.layer.borderWidth = [attributes[NSStrokeWidthAttributeName] floatValue];
+            button.layer.cornerRadius = radius;
+            button.clipsToBounds = radius > 0;
+            button.contentEdgeInsets = UIEdgeInsetsMake(0, insets, 0, insets);
+            NSMutableDictionary *mulAttributes = [attributes mutableCopy];
+            if (mulAttributes[NSParagraphStyleAttributeName] == nil) {
+                NSMutableParagraphStyle *style = [NSMutableParagraphStyle new];
+                style.lineBreakMode = NSLineBreakByWordWrapping;
+                mulAttributes[NSParagraphStyleAttributeName] = style;
+            }
+            CGSize size = [tag boundingRectWithSize:CGSizeMake(maxWidth - insets * 2, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingTruncatesLastVisibleLine) attributes:mulAttributes context:nil].size;
+            CGFloat labelWidth = MAX(size.width, minWidth) + insets * 2;
+            CGFloat labelHeight = MAX(lineHeight, size.height + (lineHeight - textHeight));
+             if (originX + labelWidth + itemSpace > maxWidth) {
+                 originY += lineHeight + lineSpace;
+                 originX = 0;
+            }
+            button.frame = CGRectMake(originX, originY, labelWidth, labelHeight);
+            button.contentHorizontalAlignment = labelHeight > lineHeight ? UIControlContentHorizontalAlignmentLeft : UIControlContentHorizontalAlignmentCenter;
+            [self addSubview:button];
+            originX += labelWidth + itemSpace;
+            originY += labelHeight - lineHeight;
+            maxHeight = MAX(maxHeight, CGRectGetMaxY(button.frame));
+        }
+        self.frame = CGRectMake(self.left, self.top, self.width, maxHeight);
+        for (NSLayoutConstraint *c in self.constraints) {
+            if (c.firstAnchor == self.heightAnchor) {
+                c.constant = maxHeight;
+            }
+        }
+    }
 }
 @end
 @implementation CALayer (Extension)

@@ -13,9 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGPoint origin;
 @property (nonatomic) CGSize  size;
 @property (nonatomic, getter = isDisplayed) BOOL  displayed;
-@property (nonatomic, assign) IBInspectable CGPoint topCorners;
-@property (nonatomic, assign) IBInspectable CGPoint bottomCorners;
+@property (nonatomic, assign) CGPoint topCorners;
+@property (nonatomic, assign) CGPoint bottomCorners;
 - (void)dashedLine: (UIColor *)color thickness: (CGFloat)thickness spacing: (CGFloat)spacing length: (CGFloat)length;
+#pragma attributes contains NSFontAttributeName NSForegroundColorAttributeName NSBackgroundColorAttributeName NSStrokeWidthAttributeName NSForegroundColorAttributeName
+- (void)createTagsViewWithTags: (NSArray<NSString *> *)tags attributes: (NSDictionary<NSAttributedStringKey, id> *)attributes insets:(CGFloat)insets lineHeight: (CGFloat)lineHeight lineSpace: (CGFloat)lineSpace itemSpace: (CGFloat)itemSpace cornerRadius: (CGFloat)radius maxWidth: (CGFloat)maxWidth;
 @end
 @interface UILabel (Extension)
 + (instancetype)labelText: (NSString *)text font: (UIFont*)font color: (UIColor *)color align: (NSTextAlignment)alignment lines: (CGFloat)lines;

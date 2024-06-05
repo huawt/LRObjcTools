@@ -112,6 +112,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cornerView" destination="JhZ-ep-B6d" id="vTP-cA-w8J"/>
                         <outlet property="slider" destination="1up-zM-4UO" id="3dE-xc-VGw"/>
                     </connections>
                 </viewController>
