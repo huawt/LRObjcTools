@@ -19,7 +19,9 @@
     [self.view addSubview:button];
 
     UIView *v = [[UIView alloc] initWithFrame:CGRectMake(10, 100, 300, 10)];
-    [v createTagsViewWithTags:@[@"123", @"123123123123123", @"123312312312312312312312312312312312312312312312123123", @"12312323123", @"12323123", @"1231123", @"123123123"] attributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:12], NSForegroundColorAttributeName: UIColor.redColor, NSBackgroundColorAttributeName: UIColor.blueColor, NSStrokeColorAttributeName: UIColor.blackColor, NSStrokeWidthAttributeName: @(1)} insets:10 lineHeight:20 lineSpace:8 itemSpace:15 cornerRadius:10 maxWidth:300];
+    NSMutableParagraphStyle * s = [NSMutableParagraphStyle new];
+    s.lineSpacing = 3;
+    [v createTagsViewWithTags:@[@"123", @"123123123123123", @"123312312312312312312312312312312312312312312312123123", @"12312323123", @"12323123", @"1231123", @"123123123"] attributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:12], NSForegroundColorAttributeName: UIColor.redColor, NSBackgroundColorAttributeName: UIColor.blueColor, NSStrokeColorAttributeName: UIColor.blackColor, NSStrokeWidthAttributeName: @(1), NSParagraphStyleAttributeName: s} insets:10 lineHeight:20 lineSpace:8 itemSpace:15 cornerRadius:10 maxWidth:300 actionHandler: nil];
     v.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:v];
 }

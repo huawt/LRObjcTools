@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGPoint bottomCorners;
 - (void)dashedLine: (UIColor *)color thickness: (CGFloat)thickness spacing: (CGFloat)spacing length: (CGFloat)length;
 #pragma attributes contains NSFontAttributeName NSForegroundColorAttributeName NSBackgroundColorAttributeName NSStrokeWidthAttributeName NSForegroundColorAttributeName
-- (void)createTagsViewWithTags: (NSArray<NSString *> *)tags attributes: (NSDictionary<NSAttributedStringKey, id> *)attributes insets:(CGFloat)insets lineHeight: (CGFloat)lineHeight lineSpace: (CGFloat)lineSpace itemSpace: (CGFloat)itemSpace cornerRadius: (CGFloat)radius maxWidth: (CGFloat)maxWidth;
+- (void)createTagsViewWithTags: (NSArray<NSString *> *)tags attributes: (NSDictionary<NSAttributedStringKey, id> *)attributes insets:(CGFloat)insets lineHeight: (CGFloat)lineHeight lineSpace: (CGFloat)lineSpace itemSpace: (CGFloat)itemSpace cornerRadius: (CGFloat)radius maxWidth: (CGFloat)maxWidth actionHandler: (void(^ _Nullable)(NSInteger index))handler;
 @end
 @interface UILabel (Extension)
 + (instancetype)labelText: (NSString *)text font: (UIFont*)font color: (UIColor *)color align: (NSTextAlignment)alignment lines: (CGFloat)lines;
@@ -51,6 +51,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIControl (TimeDelay)
 @property (nonatomic, assign) NSTimeInterval eventInterval;
 + (void)registerDelayClass: (NSArray *)classNames;
+- (void)deleteAllTargets;
+- (void)modifyTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents;
+- (void)addHandlerForControlEvents:(UIControlEvents)controlEvents handler:(void (^)(id sender))handler;
+- (void)setHandlerForControlEvents:(UIControlEvents)controlEvents handler:(void (^)(id sender))handler;
+- (void)deleteAllHandlersForControlEvents:(UIControlEvents)controlEvents;
 @end
 @interface UIButton (Extension)
 - (void)beEnabled;

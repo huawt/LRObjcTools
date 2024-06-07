@@ -195,6 +195,26 @@ static BOOL lrHexStrToRGBA(NSString *str,
     return  alert;
 }
 @end
+static const int lr_handler_key;
+@interface _LRUIControlHandlerTarget : NSObject
+@property (nonatomic, copy) void (^handler)(id sender);
+@property (nonatomic, assign) UIControlEvents events;
+- (id)initWithHandler:(void (^)(id sender))handler events:(UIControlEvents)events;
+- (void)invoke:(id)sender;
+@end
+@implementation _LRUIControlHandlerTarget
+- (id)initWithHandler:(void (^)(id sender))handler events:(UIControlEvents)events {
+    self = [super init];
+    if (self) {
+        _handler = [handler copy];
+        _events = events;
+    }
+    return self;
+}
+- (void)invoke:(id)sender {
+    if (_handler) _handler(sender);
+}
+@end
 static NSArray *LRControlDelayClasses;
 @implementation UIControl (TimeDelay)
 + (void)load {
@@ -248,6 +268,63 @@ static NSArray *LRControlDelayClasses;
 + (void)registerDelayClass:(NSArray *)classNames {
     LRControlDelayClasses = classNames;
 }
+- (void)addHandlerForControlEvents:(UIControlEvents)controlEvents handler:(nonnull void (^)(id  _Nonnull __strong))handler {
+    if (!controlEvents) return;
+    _LRUIControlHandlerTarget *target = [[_LRUIControlHandlerTarget alloc]
+                                       initWithHandler:handler events:controlEvents];
+    [self addTarget:target action:@selector(invoke:) forControlEvents:controlEvents];
+    NSMutableArray *targets = [self _lr_allUIControlHandlerTargets];
+    [targets addObject:target];
+}
+- (void)deleteAllHandlersForControlEvents:(UIControlEvents)controlEvents {
+    if (!controlEvents) return;
+    NSMutableArray *targets = [self _lr_allUIControlHandlerTargets];
+    NSMutableArray *removes = [NSMutableArray array];
+    for (_LRUIControlHandlerTarget *target in targets) {
+        if (target.events & controlEvents) {
+            UIControlEvents newEvent = target.events & (~controlEvents);
+            if (newEvent) {
+                [self removeTarget:target action:@selector(invoke:) forControlEvents:target.events];
+                target.events = newEvent;
+                [self addTarget:target action:@selector(invoke:) forControlEvents:target.events];
+            } else {
+                [self removeTarget:target action:@selector(invoke:) forControlEvents:target.events];
+                [removes addObject:target];
+            }
+        }
+    }
+    [targets removeObjectsInArray:removes];
+}
+- (void)deleteAllTargets {
+    [[self allTargets] enumerateObjectsUsingBlock: ^(id object, BOOL *stop) {
+        [self removeTarget:object action:NULL forControlEvents:UIControlEventAllEvents];
+    }];
+    [[self _lr_allUIControlHandlerTargets] removeAllObjects];
+}
+- (void)modifyTarget:(nonnull id)target action:(nonnull SEL)action forControlEvents:(UIControlEvents)controlEvents {
+    if (!target || !action || !controlEvents) return;
+    NSSet *targets = [self allTargets];
+    for (id currentTarget in targets) {
+        NSArray *actions = [self actionsForTarget:currentTarget forControlEvent:controlEvents];
+        for (NSString *currentAction in actions) {
+            [self removeTarget:currentTarget action:NSSelectorFromString(currentAction)
+                forControlEvents:controlEvents];
+        }
+    }
+    [self addTarget:target action:action forControlEvents:controlEvents];
+}
+- (void)setHandlerForControlEvents:(UIControlEvents)controlEvents handler:(nonnull void (^)(id  _Nonnull __strong))handler {
+    [self deleteAllHandlersForControlEvents:UIControlEventAllEvents];
+    [self addHandlerForControlEvents:controlEvents handler:handler];
+}
+- (NSMutableArray *)_lr_allUIControlHandlerTargets {
+    NSMutableArray *targets = objc_getAssociatedObject(self, &lr_handler_key);
+    if (!targets) {
+        targets = [NSMutableArray array];
+        objc_setAssociatedObject(self, &lr_handler_key, targets, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return targets;
+}
 @end
 @implementation UIButton (Extension)
 - (void)beEnabled {
@@ -284,6 +361,7 @@ static NSArray *LRControlDelayClasses;
     return [text isValid] ? text : @"";;
 }
 @end
+static  BOOL lr_tagsviewhandler_key = NO;
 @implementation UIView (Extension)
 + (void)load {
     static dispatch_once_t onceToken;
@@ -432,23 +510,35 @@ static NSArray *LRControlDelayClasses;
     CGPathRelease(path);
     [self.layer insertSublayer:shapeLayer atIndex:0];
 }
-- (void)createTagsViewWithTags: (NSArray<NSString *> *)tags attributes: (NSDictionary<NSAttributedStringKey, id> *)attributes insets:(CGFloat)insets lineHeight: (CGFloat)lineHeight lineSpace: (CGFloat)lineSpace itemSpace: (CGFloat)itemSpace cornerRadius: (CGFloat)radius maxWidth: (CGFloat)maxWidth {
+- (void)createTagsViewWithTags: (NSArray<NSString *> *)tags attributes: (NSDictionary<NSAttributedStringKey, id> *)attributes insets:(CGFloat)insets lineHeight: (CGFloat)lineHeight lineSpace: (CGFloat)lineSpace itemSpace: (CGFloat)itemSpace cornerRadius: (CGFloat)radius maxWidth: (CGFloat)maxWidth actionHandler: (void(^)(NSInteger index))handler {
     if (tags.count > 0) {
         CGFloat maxHeight = 0;
         CGFloat originX = 0;
         CGFloat originY = 0;
         CGFloat minWidth = 12;
         CGFloat textHeight = [@" " boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingTruncatesLastVisibleLine) attributes:attributes context:nil].size.height;
-        for (NSString *tag in tags) {
+        for (NSInteger idx = 0; idx < tags.count; idx++) {
+            NSString *tag = tags[idx];
             UIFont *font = attributes[NSFontAttributeName];
             if (font) {
                 minWidth = font.pointSize;
             }
             UIButton *button = [UIButton buttonWithType:0];
-            button.userInteractionEnabled = NO;
+            button.userInteractionEnabled = handler != nil;
+            if (handler) {
+                [button addHandlerForControlEvents:UIControlEventTouchUpInside handler:^(UIButton  *_Nonnull sender) {
+                    if (lr_tagsviewhandler_key == NO) {
+                        lr_tagsviewhandler_key = YES;
+                        handler(idx);
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            lr_tagsviewhandler_key = NO;
+                        });
+                    }
+                }];
+            }
             button.backgroundColor = attributes[NSBackgroundColorAttributeName];
-            [button setTitle:tag forState:0];
-            [button setTitleColor:attributes[NSForegroundColorAttributeName] forState:0];
+//            [button setTitle:tag forState:0];
+//            [button setTitleColor:attributes[NSForegroundColorAttributeName] forState:0];
             button.titleLabel.font = font;
             button.titleLabel.numberOfLines = 0;
             button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -463,6 +553,12 @@ static NSArray *LRControlDelayClasses;
                 style.lineBreakMode = NSLineBreakByWordWrapping;
                 mulAttributes[NSParagraphStyleAttributeName] = style;
             }
+            NSMutableDictionary *as = [attributes mutableCopy];
+            [as removeObjectForKey:NSStrokeColorAttributeName];
+            [as removeObjectForKey:NSStrokeWidthAttributeName];
+            [as removeObjectForKey:NSBackgroundColorAttributeName];
+            NSAttributedString *attriString = [[NSAttributedString alloc] initWithString:tag attributes:as];
+            [button setAttributedTitle:attriString forState:0];
             CGSize size = [tag boundingRectWithSize:CGSizeMake(maxWidth - insets * 2, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingTruncatesLastVisibleLine) attributes:mulAttributes context:nil].size;
             CGFloat labelWidth = MAX(size.width, minWidth) + insets * 2;
             CGFloat labelHeight = MAX(lineHeight, size.height + (lineHeight - textHeight));
@@ -470,6 +566,7 @@ static NSArray *LRControlDelayClasses;
                  originY += lineHeight + lineSpace;
                  originX = 0;
             }
+            if (size.height - lineHeight > 0) { labelWidth = maxWidth; }
             button.frame = CGRectMake(originX, originY, labelWidth, labelHeight);
             button.contentHorizontalAlignment = labelHeight > lineHeight ? UIControlContentHorizontalAlignmentLeft : UIControlContentHorizontalAlignmentCenter;
             [self addSubview:button];
